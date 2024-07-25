@@ -58,11 +58,15 @@ class PendaftaranController extends Controller
     public function updatedata(Request $request, $id) {
       $data = Pendaftar::find($id);
       $data->update($request->all());
-      if(session('halaman_url')){
-        return Redirect(session('halaman_url'))->with('success', 'Data Berhasil Di Edit');
-      }
-
-      return redirect()('/')->with('success', 'Data Berhasil Di Edit');
+        
+      return redirect('/')->with('pesan', 'Data berhasil diedit');
     }
     
+    public function delete($id) {
+        $data = Pendaftar::find($id);
+        $data->delete();
+
+        return redirect('/')->with('pesan', 'Data berhasil dihapus');
+        return redirect()->route('siswa.tampil');
+    }
 }
