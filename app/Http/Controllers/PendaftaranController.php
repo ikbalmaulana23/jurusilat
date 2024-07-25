@@ -49,4 +49,20 @@ class PendaftaranController extends Controller
 
         return redirect('/')->with('pesan', 'registrasi berhasil');
     }
+
+    public function tampiledit($id) {
+        $data = Pendaftar::find($id);
+        return view('tampiledit', compact('data'));
+      }
+
+    public function updatedata(Request $request, $id) {
+      $data = Pendaftar::find($id);
+      $data->update($request->all());
+      if(session('halaman_url')){
+        return Redirect(session('halaman_url'))->with('success', 'Data Berhasil Di Edit');
+      }
+
+      return redirect()('/')->with('success', 'Data Berhasil Di Edit');
+    }
+    
 }
