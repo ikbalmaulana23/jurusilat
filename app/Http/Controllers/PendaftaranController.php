@@ -10,7 +10,7 @@ class PendaftaranController extends Controller
 {
     public function index()
     {
-        return view('pendaftaran');
+        return view('pendaftaran.pendaftaran');
     }
 
     public function input(inputrequest $r)
@@ -50,23 +50,25 @@ class PendaftaranController extends Controller
         return redirect('/')->with('pesan', 'registrasi berhasil');
     }
 
-    public function tampiledit($id) {
+    public function tampiledit($id)
+    {
         $data = Pendaftar::find($id);
-        return view('tampiledit', compact('data'));
-      }
-
-    public function updatedata(Request $request, $id) {
-      $data = Pendaftar::find($id);
-      $data->update($request->all());
-        
-      return redirect('/')->with('pesan', 'Data berhasil diedit');
+        return view('pendaftaran.tampiledit', compact('data'));
     }
-    
-    public function delete($id) {
+
+    public function updatedata(Request $request, $id)
+    {
+        $data = Pendaftar::find($id);
+        $data->update($request->all());
+
+        return redirect('/')->with('pesan', 'Data berhasil diedit');
+    }
+
+    public function delete($id)
+    {
         $data = Pendaftar::find($id);
         $data->delete();
 
         return redirect('/')->with('pesan', 'Data berhasil dihapus');
-        return redirect()->route('siswa.tampil');
     }
 }

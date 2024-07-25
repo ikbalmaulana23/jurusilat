@@ -8,6 +8,6 @@ class JadwalController extends Controller
 {
     public function index()
     {
-        return view('jadwal');
+        return view('jadwal.jadwal');
     }
 }

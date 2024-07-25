@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('skor', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('peserta_id');
+            $table->unsignedBigInteger('peserta_id')->nullable();
             $table->foreign('peserta_id')->references('id')->on('pendaftar');
             $table->string('orisinil');
             $table->string('kekayaan_teknik');
