@@ -24,6 +24,11 @@ Route::post('daftar', [AuthController::class, 'daftar'])->name('daftar');
 
 Route::get('pendaftaran', [PendaftaranController::class, 'index'])->name('index');
 Route::post('daftarpeserta', [PendaftaranController::class, 'input'])->name('daftarpeserta');
+Route::get('/tampiledit/{id}',[PendaftaranController::class, 'tampiledit'] )->name('tampiledit');
+Route::post('/updatedata/{id}',[PendaftaranController::class, 'updatedata'] )->name('updatedata');
+Route::post('/delete/{id}',[PendaftaranController::class, 'delete'] )->name('delete');
 
 Route::get('/skor', [SkorController::class, 'index'])->name('indexskor');
 Route::get('/skorlomba', [SkorController::class, 'skorlomba'])->name('skorlomba');
+
+
