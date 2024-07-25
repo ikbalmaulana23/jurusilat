@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SkorController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PendaftaranController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -27,3 +28,5 @@ Route::post('daftarpeserta', [PendaftaranController::class, 'input'])->name('daf
 
 Route::get('/skor', [SkorController::class, 'index'])->name('indexskor');
 Route::get('/skorlomba', [SkorController::class, 'skorlomba'])->name('skorlomba');
+
+Route::get('/jadwal', [JadwalController::class, 'index'])->name('indexjadwal');
