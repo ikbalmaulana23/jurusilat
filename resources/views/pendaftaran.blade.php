@@ -145,23 +145,23 @@
             <span>{{ $errors->first('foto') }}</span>
           </div>
 
-          {{-- <div class="mb-5">
+          <div class="mb-5">
             <label for="ktp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">KTP</label>
             <input type="file" name="ktp" id="ktp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"   />
             <span>{{ $errors->first('ktp') }}</span>
-          </div> --}}
+          </div>
 
-          {{-- <div class="mb-5">
+          <div class="mb-5">
             <label for="akta_lahir" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Akta Lahir</label>
             <input type="file" name="akta_lahir" id="akta_lahir" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"   />
             <span>{{ $errors->first('akta_lahir') }}</span>
-          </div> --}}
+          </div>
 
-          {{-- <div class="mb-5">
+          <div class="mb-5">
             <label for="ijazah" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ijazah</label>
             <input type="file" name="ijazah" id="ijazah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"   />
             <span>{{ $errors->first('ijazah') }}</span>
-          </div> --}}
+          </div>
      
      
       

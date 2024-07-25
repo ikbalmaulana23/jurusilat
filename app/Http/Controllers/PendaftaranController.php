@@ -18,12 +18,12 @@ class PendaftaranController extends Controller
         if ($r->validated()) {
             $foto = $r->foto->getClientOriginalName();
             $r->foto->move('image/', $foto);
-            // $ktp = $r->ktp->getClientOriginalName();
-            // $r->ktp->move('image/', $ktp);
-            // $akta_lahir = $r->akta_lahir->getClientOriginalName();
-            // $r->akta_lahir->move('image/', $akta_lahir);
-            // $ijazah = $r->ijazah->getClientOriginalName();
-            // $r->ijazah->move('image/', $ijazah);
+            $ktp = $r->ktp->getClientOriginalName();
+            $r->ktp->move('image/', $ktp);
+            $akta_lahir = $r->akta_lahir->getClientOriginalName();
+            $r->akta_lahir->move('image/', $akta_lahir);
+            $ijazah = $r->ijazah->getClientOriginalName();
+            $r->ijazah->move('image/', $ijazah);
 
 
             Pendaftar::create([
@@ -41,9 +41,9 @@ class PendaftaranController extends Controller
                 'kelas_tanding_FK' => $r->kelas_tanding_FK,
                 'kontingen' => $r->kontingen,
                 'foto' => $foto,
-                // 'ktp' => $ktp,
-                // 'akta_lahir' => $akta_lahir,
-                // 'ijazah' => $ijazah,
+                'ktp' => $ktp,
+                'akta_lahir' => $akta_lahir,
+                'ijazah' => $ijazah,
             ]);
         };
 

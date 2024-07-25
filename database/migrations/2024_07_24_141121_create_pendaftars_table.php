@@ -27,9 +27,9 @@ return new class extends Migration
             $table->string('kelas_tanding_FK');
             $table->string('kontingen');
             $table->string('foto');
-            // $table->string('ktp');
-            // $table->string('akta_lahir');
-            // $table->string('ijazah');
+            $table->string('ktp');
+            $table->string('akta_lahir');
+            $table->string('ijazah');
             $table->timestamps();
         });
     }

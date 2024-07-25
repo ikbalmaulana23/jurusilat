@@ -36,9 +36,9 @@ class inputrequest extends FormRequest
             'kelas_tanding_FK' => 'required',
             'kontingen' => 'required',
             'foto' => 'required',
-            // 'ktp' => 'required',
-            // 'akta_lahir' => 'required',
-            // 'ijazah' => 'required',
+            'ktp' => 'required',
+            'akta_lahir' => 'required',
+            'ijazah' => 'required',
         ];
     }
 
@@ -59,9 +59,9 @@ class inputrequest extends FormRequest
             'kelas_tanding_FK.required' => 'kelas tanding FK harus diisi',
             'kontingen.required' => 'kontingen harus diisi',
             'foto.required' => 'foto harus diisi',
-            // 'ktp.required' => 'ktp harus diisi',
-            // 'akta_lahir.required' => 'akta kelahiran harus diisi',
-            // 'ijazah.required' => 'ijazah harus diisi'
+            'ktp.required' => 'ktp harus diisi',
+            'akta_lahir.required' => 'akta kelahiran harus diisi',
+            'ijazah.required' => 'ijazah harus diisi'
 
         ];
     }
