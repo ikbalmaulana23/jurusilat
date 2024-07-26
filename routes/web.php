@@ -18,6 +18,7 @@ Route::get('/', [DashboardController::class, 'index'])->name('index');
 Route::get('/registrasi', function () {
     return view('auth.registrasi');
 });
+// Route::get('logout')
 
 
 Route::post('masuk', [AuthController::class, 'masuk'])->name('masuk');
@@ -48,3 +49,5 @@ Route::post('/inputceritera', [SkorController::class, 'inputceritera'])->name('i
 
 
 Route::get('/jadwal', [JadwalController::class, 'index'])->name('indexjadwal');
+Route::get('/inputjadwal', [JadwalController::class, 'inputjadwal'])->name('inputjadwal');
+Route::post('/inputjadwal', [JadwalController::class, 'inputjadwalpeserta'])->name('inputjadwal');

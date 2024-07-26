@@ -13,19 +13,10 @@ return new class extends Migration
     {
         Schema::create('jadwals', function (Blueprint $table) {
             $table->id();
-            $table->date('tanggal');
-            $table->string('kelas');
-            $table->string('gelanggang');
-            $table->string('partai');
-            $table->string('nm_merah');
-            $table->string('kontingen_merah');
-            $table->string('nm_biru');
-            $table->string('kotingen_biru');
+            $table->string('nama');
+            $table->string('kontingen');
+            $table->date('tanggal_hari');
             $table->string('status');
-            $table->string('pemenang');
-            $table->string('babak');
-            $table->string('medali');
-            $table->string('aktif');
             $table->timestamps();
         });
     }

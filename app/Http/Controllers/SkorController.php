@@ -8,6 +8,7 @@ use App\Models\SkorPasangan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\tunggalrequest;
+use App\Models\SkorCeritera;
 
 class SkorController extends Controller
 {
@@ -127,6 +128,42 @@ class SkorController extends Controller
                 'penampilan' => $r->penampilan
             ]);
         }
-        return redirect('/skorpasangan')->with('pesan', 'input data berhasil');
+        return redirect('/skorregu')->with('pesan', 'input data berhasil');
+    }
+
+
+    public function skorceritera()
+    {
+        $skors = SkorCeritera::all()->map(function ($skor) {
+            return [
+                'orisinil' => $skor->orisinil,
+                'kekayaan_teknik' => $skor->kekayaan_teknik,
+                'kemantapan_gerak' => $skor->kemantapan_gerak,
+                'penampilan' => $skor->penampilan,
+                'total' => $skor->orisinil + $skor->kekayaan_teknik + $skor->kemantapan_gerak + $skor->penampilan
+            ];
+        });
+
+        return view('penilaian.skorceritera', compact('skors'));
+    }
+
+    public function formceritera()
+    {
+        return view('penilaian.formceritera');
+    }
+
+
+    public function inputceritera(tunggalrequest $r)
+    {
+
+        if ($r->validated()) {
+            SkorCeritera::create([
+                'orisinil' => $r->orisinil,
+                'kekayaan_teknik' => $r->kekayaan_teknik,
+                'kemantapan_gerak' => $r->kemantapan_gerak,
+                'penampilan' => $r->penampilan
+            ]);
+        }
+        return redirect('/skorceritera')->with('pesan', 'input data berhasil');
     }
 }

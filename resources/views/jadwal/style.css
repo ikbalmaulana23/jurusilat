@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bracket {
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.round {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.round2 {
+    margin-left: 100px;
+}
+
+.matchup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.team {
+    width: 100px;
+    height: 30px;
+    border: 1px solid #000;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+}
+
+.matchup::after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background: black;
+    position: absolute;
+    left: 100px;
+    top: 15px;
+}
+
+.round2 .matchup::after {
+    width: 100px;
+    top: 5px;
+}
+
+.round1 .matchup:nth-child(odd)::before {
+    content: "";
+    width: 2px;
+    height: 45px;
+    background: black;
+    position: absolute;
+    left: 150px;
+    top: 15px;
+}
+
+.round2 .matchup:nth-child(even)::before {
+    content: "";
+    width: 2px;
+    height: 45px;
+    background: black;
+    position: absolute;
+    left: 200px;
+    top: -15px;
+}
+
+.round2 .matchup:nth-child(odd)::after {
+    top: 45px;
+}

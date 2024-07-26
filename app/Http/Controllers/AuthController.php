@@ -18,7 +18,7 @@ class AuthController extends Controller
                 'name' => $r->name,
                 'password' => $r->password
             ])) {
-                return redirect('/dashboard')->with('pesan', 'berhasil login');
+                return redirect('/')->with('pesan', 'berhasil login');
             } else {
                 return back()->with('pesan', 'login gagal');
             }
