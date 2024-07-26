@@ -15,7 +15,7 @@
             <h1 class="ml-28 font-semibold ">Data Peserta</h1>
             <div class="w-1/4 border grid grid-cols-2">
     
-                <p>Nama</p> <p>Ikbal Maulana    </p>
+                <p>Nama</p> <p>Harimau Lalok  </p>
                 <p>Kategori Tanding</p> <p>Tunggal</p>
                 <p>Golongan</p> <p>Desawa</p>
                 <p>Kode GR  </p> <p>B83</p>
@@ -31,10 +31,10 @@
             <div class="flex justify-center">
                 <div class="basis-3/4 border rounded-md p-5">
                 <div>
-                    <h1 class="text-center font-semibold text-lg">Penilaian Lomba Tunggal</h1>
+                    <h1 class="text-center font-semibold text-lg">Penilaian Lomba Regu</h1>
                     <h1 class="text-center font-semibold text-lg">Silat Tradisional Sumatera Barat</h1>
                 </div>
-                <form action="{{ route('skorregu') }}" method="post">
+                <form action="{{ route('inputregu') }}" method="post">
                     @csrf
                 <div class="grid grid-cols-2 gap-7 mt-10">
                      

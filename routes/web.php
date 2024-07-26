@@ -31,16 +31,20 @@ Route::post('/delete/{id}', [PendaftaranController::class, 'delete'])->name('del
 
 Route::get('/skor', [SkorController::class, 'index'])->name('indexskor');
 Route::get('/skorlomba', [SkorController::class, 'skorlomba'])->name('skorlomba');
+Route::post('/tunggal', [SkorController::class, 'tunggal'])->name('skortunggal');
+
 Route::get('/skorpasangan', [SkorController::class, 'skorpasangan'])->name('skorpasangan');
 Route::get('/formpasangan', [SkorController::class, 'formpasangan'])->name('formpasangan');
+Route::post('/skorpasangan', [SkorController::class, 'inputpasangan'])->name('inputpasangan');
 
+
+Route::get('/skorregu', [SkorController::class, 'skorregu'])->name('skorregu');
 Route::get('/formregu', [SkorController::class, 'formregu'])->name('formregu');
-Route::get('/formceritera', [SkorController::class, 'formceritera'])->name('formceritera');
-Route::post('/tunggal', [SkorController::class, 'tunggal'])->name('skortunggal');
-Route::post('/pasangan', [SkorController::class, 'pasangan'])->name('skorpasangan');
-Route::post('/kelompok', [SkorController::class, 'kelompok'])->name('skorkelompok');
-Route::post('/ceritera', [SkorController::class, 'ceritera'])->name('skorceritera');
+Route::post('/inputregu', [SkorController::class, 'inputregu'])->name('inputregu');
 
+Route::get('/skorceritera', [SkorController::class, 'skorceritera'])->name('skorceritera');
+Route::get('/formceritera', [SkorController::class, 'formceritera'])->name('formceritera');
+Route::post('/inputceritera', [SkorController::class, 'inputceritera'])->name('inputceritera');
 
 
 Route::get('/jadwal', [JadwalController::class, 'index'])->name('indexjadwal');

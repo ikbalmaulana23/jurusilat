@@ -15,7 +15,7 @@
             <h1 class="ml-28 font-semibold ">Data Peserta</h1>
             <div class="w-1/4 border grid grid-cols-2">
     
-                <p>Nama</p> <p>Ikbal Maulana    </p>
+                <p>Nama</p> <p>Abdul    </p>
                 <p>Kategori Tanding</p> <p>Tunggal</p>
                 <p>Golongan</p> <p>Desawa</p>
                 <p>Kode GR  </p> <p>B83</p>
