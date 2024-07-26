@@ -2,9 +2,9 @@
   <main class="">
     <div class="flex gap-2">
       <a href="/skor" class="px-3 py-1 rounded-t-md bg-yellow-400">Tunggal</a>
-      <a href="/formpasangan"  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Pasangan</a>
-      <a href="/formregu"  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Regu</a>
-      <a href="/formceritera"  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Ceritera</a>
+      <a href="/skorpasangan"  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Pasangan</a>
+      <a href="/skorregu"  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Regu</a>
+      <a href="/skorceritera"  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Ceritera</a>
     </div>
     <div class="container md:mx-auto mb-5 border">
 

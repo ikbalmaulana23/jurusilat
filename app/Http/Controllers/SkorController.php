@@ -33,6 +33,20 @@ class SkorController extends Controller
         return view('penilaian.formtunggal');
     }
 
+    public function skorpasangan()
+    {
+        $skors = SkorPasangan::all()->map(function ($skor) {
+            return [
+                'orisinil' => $skor->orisinil,
+                'kekayaan_teknik' => $skor->kekayaan_teknik,
+                'kemantapan_gerak' => $skor->kemantapan_gerak,
+                'penampilan' => $skor->penampilan,
+                'total' => $skor->orisinil + $skor->kekayaan_teknik + $skor->kemantapan_gerak + $skor->penampilan
+            ];
+        });
+        return view('penilaian.skorpasangan', compact('skors'));
+    }
+
     public function tunggal(tunggalrequest $r)
     {
 
@@ -49,19 +63,9 @@ class SkorController extends Controller
 
     public function formpasangan()
     {
-        $skors = SkorPasangan::all()->map(function ($skor) {
-            return [
-                'orisinil' => $skor->orisinil,
-                'kekayaan_teknik' => $skor->kekayaan_teknik,
-                'kemantapan_gerak' => $skor->kemantapan_gerak,
-                'penampilan' => $skor->penampilan,
-                'total' => $skor->orisinil + $skor->kekayaan_teknik + $skor->kemantapan_gerak + $skor->penampilan
-            ];
-        });
 
 
-
-        return view('penilaian.formpasangan', compact('skors'));
+        return view('penilaian.formpasangan');
     }
 
 
@@ -76,7 +80,7 @@ class SkorController extends Controller
                 'penampilan' => $r->penampilan
             ]);
         }
-        return redirect('/skor')->with('pesan', 'input data berhasil');
+        return redirect('/skorpasangan')->with('pesan', 'input data berhasil');
     }
 
     public function formregu()

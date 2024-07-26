@@ -1,49 +1,90 @@
+
+
+
 <x-layout>
-    <main class="">
-      <div class="flex gap-2">
-        
-        <a href="/skor"  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Tunggal</a>
-        <a href="/formpasangan" class="px-3 py-1 rounded-t-md bg-yellow-400">Pasangan</a>
-        <a href="/formregu"  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Regu</a>
-        <a href=""  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Ceritera</a>
-      </div>
-      <div class="container md:mx-auto mb-5 border pt-10">
+
+  <main class="">
+      <div class="container md:mx-auto">
   
-     
-        
-        <a href="/formpasangan" class="px-6 py-3.5 text-base font-medium text-white bg-blue-600 hozver:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800">Mulai Penilaian Pasangan</a>
-          
-        <p class="text-center font-semibold my-3">Pasangan</p>
-        <table class="w-full">
-        <thead>
-            <tr>
-              <td>No</td>
-              <td>Orisinil</td>
-              <td>Kekayaan Teknik</td>
-              <td>Kemantapan Gerak</td>
-              <td>Penampilan</td>
-              <td>Total </td>
-            </tr>
-          </thead>
-          <tbody>
-            @foreach($skors as $index => $skor)
-          <tr>
-              <td> {{ $index + 1 }}</td>
-              <td>{{ $skor['orisinil'] }}</td>
-              <td>{{ $skor['kekayaan_teknik'] }}</td>
-              <td>{{ $skor['kemantapan_gerak'] }}</td>
-              <td>{{ $skor['penampilan'] }}</td>
-              <td>{{ $skor['total'] }}</td>
-          </tr>
-      @endforeach
-          </tbody>
-        </table>
+         <div class="">
+          <h1 class="text-center">Inpur Skor Perlombaan Silat Tradisional</h1>
+          <h1 class="text-center">Sumatra Barat</h1>  
+         </div>
   
+      <div class="border">
+          <h1 class="ml-28 font-semibold ">Data Peserta</h1>
+          <div class="w-1/4 border grid grid-cols-2">
+  
+              <p>Nama</p> <p>Ikbal Maulana    </p>
+              <p>Kategori Tanding</p> <p>Tunggal</p>
+              <p>Golongan</p> <p>Desawa</p>
+              <p>Kode GR  </p> <p>B83</p>
+              <p>Kelas Tanding</p> <p>Dewasa Ringan</p>
+          </div>
   
       </div>
+          <div class="flex">
+              <h1>Juri</h1>
+              <p>: Dt. Bagindo Ali</p>
+          </div>
+  
+          <div class="flex justify-center">
+              <div class="basis-3/4 border rounded-md p-5">
+              <div>
+                  <h1 class="text-center font-semibold text-lg">Penilaian Lomba Tunggal</h1>
+                  <h1 class="text-center font-semibold text-lg">Silat Tradisional Sumatera Barat</h1>
+              </div>
+              <form action="{{ route('skorpasangan') }}" method="post">
+                  @csrf
+              <div class="grid grid-cols-2 gap-7 mt-10">
+                   
+  
+                  <div class="border border-black p-3 rounded-md">
+                      <p class="font-semibold">Keaslian Pencak Silat <span class="font-normal text-gray-500">(Max 25)</span> </p>
+                  </div>  
+                  <div class="border border-black p-3 rounded-md">
+                      <input type="number" style="border: none"  class="w-full" name="orisinil">
+                  </div>
+  
+                  <div class="border border-black p-3 rounded-md">
+                      <p class="font-semibold">Kemantapan Gerak <span class="font-normal text-gray-500">(Max 25)</span></p>
+                  </div>
+                  <div class="border border-black p-3 rounded-md">
+                      <input type="number" style="border: none" class="w-full" name="kekayaan_teknik">
+                  </div>
+                  <div class="border border-black p-3 rounded-md">
+                      <p class="font-semibold">Kekayaan Gerakan <span class="font-normal text-gray-500">(Max 25)</span></p>
+                  </div>
+                  <div class="border border-black p-3 rounded-md">
+                      <input type="number" style="border: none" class="w-full" name="kemantapan_gerak">
+                  </div>
+                  <div class="border border-black p-3 rounded-md">
+                      <p class="font-semibold">Penampilan <span class="font-normal text-gray-500">(Max 25)</span></p>
+                  </div>
+                  <div class="border border-black p-3 rounded-md">
+                      <input type="number" style="border: none" class="w-full" name="penampilan">
+                  </div>
+                  <div>
+                      <h1 class="text-white"> f</h1>
+                  </div>
+                  <div class="border border-black p-3 rounded-md flex">
+                      <label for="total">Total</label>
+                     <div></div>
+                  </div>
+  
+              </div>
+              <div class="flex justify-end mt-4">
+                  <button type="submit" class="bg-blue-500 px-3 py-2 rounded-md text-white">Upload Skor</button>
+              </div>
+          </form>
+  
+  
+  
+          </div>
+          </div>
+      
+  
+        </div>
+  
   </main>
-  
-  
-  </x-layout>
-  
-  
+</x-layout>

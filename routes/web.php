@@ -31,8 +31,10 @@ Route::post('/delete/{id}', [PendaftaranController::class, 'delete'])->name('del
 
 Route::get('/skor', [SkorController::class, 'index'])->name('indexskor');
 Route::get('/skorlomba', [SkorController::class, 'skorlomba'])->name('skorlomba');
-Route::get('/formregu', [SkorController::class, 'formregu'])->name('formregu');
+Route::get('/skorpasangan', [SkorController::class, 'skorpasangan'])->name('skorpasangan');
 Route::get('/formpasangan', [SkorController::class, 'formpasangan'])->name('formpasangan');
+
+Route::get('/formregu', [SkorController::class, 'formregu'])->name('formregu');
 Route::get('/formceritera', [SkorController::class, 'formceritera'])->name('formceritera');
 Route::post('/tunggal', [SkorController::class, 'tunggal'])->name('skortunggal');
 Route::post('/pasangan', [SkorController::class, 'pasangan'])->name('skorpasangan');
