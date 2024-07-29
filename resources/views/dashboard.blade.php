@@ -1,7 +1,7 @@
 <x-layout>
 
 <body>
- 
+
 
     <p class="text-center  text-bold text-2xl">Data Peserta</p>
     <div class="">
@@ -54,7 +54,7 @@
                         <th scope="col" class="px-6 py-3">
                             Kontingen
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        {{-- <th scope="col" class="px-6 py-3">
                             Foto
                         </th>
                         <th scope="col" class="px-6 py-3">
@@ -65,7 +65,7 @@
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Foto Ijazah
-                        </th>
+                        </th> --}}
                         <th scope="col" class="px-6 py-3">
                             Aksi
                         </th>
@@ -87,7 +87,7 @@
                             <td class="text-center">{{ $row->kode_gr }}</td>
                             <td class="text-center">{{ $row->kelas_tanding_FK }}</td>
                             <td class="text-center">{{ $row->kontingen }}</td>
-                            <td>
+                            {{-- <td>
                                 <img src="{{ asset('image/' . $row->foto) }}" alt="" width="80px">
                             </td>
                             <td>
@@ -98,7 +98,7 @@
                             </td>
                             <td>
                                 <img src="{{ asset('image/' . $row->ijazah) }}" alt="" width="80px">
-                            </td>
+                            </td> --}}
                             <td class="flex flex-col">
                                 <a href="/tampiledit/{{ $row->id }}"
                                     class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Edit</a>

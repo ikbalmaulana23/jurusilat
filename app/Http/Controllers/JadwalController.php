@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Jadwal;
 use Illuminate\Http\Request;
 use App\Http\Requests\JadwalRequest;
+use App\Models\Pendaftar;
 
 class JadwalController extends Controller
 {
@@ -16,7 +17,8 @@ class JadwalController extends Controller
 
     public function inputjadwal()
     {
-        return view('jadwal.inputjadwal');
+        $data['peserta'] = Pendaftar::all();
+        return view('jadwal.inputjadwal', $data);
     }
     public function inputjadwalpeserta(JadwalRequest $r)
     {

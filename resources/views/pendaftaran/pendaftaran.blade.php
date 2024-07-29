@@ -19,13 +19,15 @@
             <div class="mb-5">
                 <label for="jen_kelamin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis
                     Kelamin</label>
-                <input type="text" name="jen_kelamin" id="jen_kelamin"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                <span>{{ $errors->first('jen_kelamin') }}</span>
-                {{-- <select name="jen_kelamin" id="jen_kelamin" >
-            <option value="laki-laki">Laki Laki</option>
-            <option value="perempuan">Perempuan</option>
-        </select> --}}
+                {{-- <input type="text" name="jen_kelamin" id="jen_kelamin"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" /> --}}
+                    <select id="jen_kelamin" name="jen_kelamin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+
+                        <option selected disabled>Pilih Jenis Kelamin</option>
+                        <option value="Laki-Laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                      </select>
+                    <span>{{ $errors->first('jen_kelamin') }}</span>
             </div>
 
             <div class="mb-5">
@@ -47,8 +49,8 @@
 
             <div class="mb-5">
                 <label for="tb" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tinggi
-                    Badan(m)</label>
-                <input type="text" name="tb" id="tb"
+                    Badan(cm)</label>
+                <input type="number" name="tb" id="tb"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                 <span>{{ $errors->first('tb') }}</span>
             </div>
@@ -57,7 +59,7 @@
             <div class="mb-5">
                 <label for="bb" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Berat Badan
                     (kg)</label>
-                <input type="text" name="bb" id="bb"
+                <input type="number" name="bb" id="bb"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                 <span>{{ $errors->first('bb') }}</span>
             </div>
@@ -154,7 +156,7 @@
 
 
     </div>
-    <div class="flex justify-center ">
+    <div class="flex justify-center my-7">
         <button type="submit"
             class="text-white bg-blue-700  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><span
                 class="mx-10">Submit</span></button>

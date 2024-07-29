@@ -7,11 +7,28 @@
           <div class="border-b border-gray-900/10 pb-12 flex flex-col justify-end">
             <h2 class="text-base font-semibold leading-7 text-gray-900">Input Jadwal Tanding</h2>
             <p class="mt-1 text-sm leading-6 text-gray-600">Masukan input jadwal tanding peserta .</p>
-      
+
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 ">
               <div class="sm:col-span-4">
                     <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Nama Peserta</label>
-                    <input type="text" name="nama" id="nama" autocomplete="username" class="w-full flex-1 border border-gray-300 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 " placeholder="Nama Peserta" >
+                    <select id="nama" name="nama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="" selected disabled>Pilih Nama Peserta</option>
+                        @foreach ($peserta as $data)
+                        <option value="{{$data->id}}">{{$data->nama}}</option>
+                        @endforeach
+
+                      </select>
+
+                 
+                    {{-- <select class="form-select" aria-label="Default select example" name="id_fakultas" id="fakultas">
+                        <option value="" selected disabled>Pilih Nama Peserta</option>
+                        @foreach ($peserta as $data)
+                        <option value="{{$data->id}}">{{$data->nama}}</option>
+                        @endforeach
+                    </select> --}}
+
+
+                    {{-- <input type="text" name="nama" id="nama" autocomplete="username" class="w-full flex-1 border border-gray-300 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 " placeholder="Nama Peserta" > --}}
               </div>
               <div class="sm:col-span-4">
                 <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Kontingen</label>
@@ -25,20 +42,20 @@
         <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Status</label>
         <input type="text" name="status" id="status" autocomplete="username" class="w-full flex-1 border border-gray-300 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 " placeholder="Nama Peserta" >
   </div>
-      
-      
-     
-      
-              
+
+
+
+
+
             </div>
-            <button type="submit" class="p-2 bg-red-700 text-white rounded-lg mt-7"> Masukkan Jadwal</button>        
+            <button type="submit" class="p-2 bg-red-700 text-white rounded-lg mt-7"> Masukkan Jadwal</button>
           </div>
-      
-          
+
+
       </form>
 </div>
 
-  
+
 
 
 </x-layout>
