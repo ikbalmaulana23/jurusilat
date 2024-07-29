@@ -159,8 +159,6 @@
                 <span>{{ $errors->first('ijazah') }}</span>
             </div>
 
-
-
     </div>
     <div class="flex justify-center ">
         <button type="submit"
