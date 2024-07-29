@@ -46,7 +46,7 @@ class inputrequest extends FormRequest
     {
         return [
             'nama.required' => 'nama harus diisi',
-            'jen_kelamin.required' => 'jenis kelamin harus diisin',
+            'jen_kelamin.required' => 'jenis kelamin harus diisi',
             'tpt_lahir.required' => 'tempat lahir harus diisi',
             'tgl_lahir.required' => 'tanggal lahir harus diisi',
             'tb.required' => 'tinggi badan harus diisin',

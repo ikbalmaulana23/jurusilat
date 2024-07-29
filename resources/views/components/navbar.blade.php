@@ -2,7 +2,7 @@
 <nav class="bg-red-500 border-gray-600 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="img/logo.jpg" class="h-16" alt="Flowbite Logo" />
+          <img src="{{asset('/')}}img/logo.jpg" class="h-16" alt="Flowbite Logo" />
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{ optional(auth()->user())->name
            ?? 'Juri Silat'}}</span>
       </a>
@@ -18,7 +18,7 @@
           <x-nav-link href="/skor" :active="request()->is('skor')">Skor</x-nav-link>
           <x-nav-link href="/jadwal" :active="request()->is('jadwal')">Jadwal</x-nav-link>
           <x-nav-link href="/pendaftaran" :active="request()->is('pendaftaran')">Pendaftaran</x-nav-link>
-       
+
         </ul>
       </div>
     </div>

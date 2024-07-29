@@ -19,13 +19,19 @@
             <div class="mb-5">
                 <label for="jen_kelamin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis
                     Kelamin</label>
-                <input type="text" name="jen_kelamin" id="jen_kelamin" value="{{ $data->jen_kelamin }}"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                <span>{{ $errors->first('jen_kelamin') }}</span>
-                {{-- <select name="jen_kelamin" id="jen_kelamin" >
-            <option value="laki-laki">Laki Laki</option>
-            <option value="perempuan">Perempuan</option>
-        </select> --}}
+
+                    <select id="jen_kelamin" name="jen_kelamin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="" disabled {{ $data->jen_kelamin == null ? 'selected' : '' }}>Pilih Jenis Kelamin</option>
+                        <option value="Laki-Laki" {{ $data->jen_kelamin == 'Laki-Laki' ? 'selected' : '' }}>Laki-Laki</option>
+                        <option value="Perempuan" {{ $data->jen_kelamin == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+                    </select>
+
+                    {{-- <input type="text" name="jen_kelamin" id="jen_kelamin" value="{{ $data->jen_kelamin }}"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" /> --}}
+
+
+                    <span>{{ $errors->first('jen_kelamin') }}</span>
+
             </div>
 
             <div class="mb-5">

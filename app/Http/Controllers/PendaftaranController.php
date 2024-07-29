@@ -53,6 +53,7 @@ class PendaftaranController extends Controller
     public function tampiledit($id)
     {
         $data = Pendaftar::find($id);
+        
         return view('pendaftaran.tampiledit', compact('data'));
     }
 
