@@ -30,6 +30,10 @@ Route::get('/tampiledit/{id}', [PendaftaranController::class, 'tampiledit'])->na
 Route::post('/updatedata/{id}', [PendaftaranController::class, 'updatedata'])->name('updatedata');
 Route::post('/delete/{id}', [PendaftaranController::class, 'delete'])->name('delete');
 
+
+Route::get('/pendaftaran', [PendaftaranController::class, 'showPage'])->name('page.show');
+
+
 Route::get('/skor', [SkorController::class, 'index'])->name('indexskor');
 Route::get('/skorlomba', [SkorController::class, 'skorlomba'])->name('skorlomba');
 Route::post('/tunggal', [SkorController::class, 'tunggal'])->name('skortunggal');
