@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Pendaftar;
 use Illuminate\Http\Request;
 use App\Http\Requests\inputrequest;
-use App\Models\registrasi;
 
 class PendaftaranController extends Controller
 {
@@ -24,7 +23,6 @@ class PendaftaranController extends Controller
 
     public function input(inputrequest $r)
     {
-
         if ($r->validated()) {
             $foto = $r->foto->getClientOriginalName();
             $r->foto->move('image/', $foto);
@@ -36,12 +34,8 @@ class PendaftaranController extends Controller
             $r->ijazah->move('image/', $ijazah);
 
 
-            $registration = registrasi::create();
-
-
             Pendaftar::create([
                 'nama' => $r->nama,
-                'id_registrasi' => $registration->id,
                 'jen_kelamin' => $r->jen_kelamin,
                 'tpt_lahir' => $r->tpt_lahir,
                 'tgl_lahir' => $r->tgl_lahir,
@@ -63,7 +57,6 @@ class PendaftaranController extends Controller
 
         return redirect('/')->with('pesan', 'registrasi berhasil');
     }
-
 
     public function tampiledit($id)
     {

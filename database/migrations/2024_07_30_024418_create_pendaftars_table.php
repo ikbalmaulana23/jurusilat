@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('pendaftar', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->unsignedBigInteger('id_registrasi');
             $table->string('jen_kelamin');
             $table->string('tpt_lahir');
             $table->date('tgl_lahir');
@@ -31,6 +32,8 @@ return new class extends Migration
             $table->string('akta_lahir');
             $table->string('ijazah');
             $table->timestamps();
+
+            $table->foreign('id_registrasi')->references('id')->on('registrasi');
         });
     }
 
