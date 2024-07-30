@@ -11,5 +11,5 @@ class Skor extends Model
 
     protected $table = 'skor';
 
-    protected $fillable = ['orisinil', 'kekayaan_teknik', 'kemantapan_gerak', 'penampilan'];
+    protected $fillable = ['id_register','orisinil', 'kekayaan_teknik', 'kemantapan_gerak', 'penampilan'];
 }
