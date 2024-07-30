@@ -98,7 +98,7 @@
                    
                       <div class="rounded-lg bg-white p-5"> 
                         <p class="text-center text-lg font-semibold">Rekap  Nilai Peserta Silat Sumatera Barat</p>
-                        @s
+                        
                         @foreach($skorRegus as $skor)
                         <tr>
                             <td>{{ $skor->id }}</td>
