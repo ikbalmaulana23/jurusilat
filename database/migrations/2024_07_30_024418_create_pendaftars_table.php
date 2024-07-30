@@ -25,8 +25,8 @@ return new class extends Migration
             $table->string('asal_sekolah');
             // $table->string('kategori_tanding');
             $table->string('golongan');
-            $table->string('kode_gr');
-            $table->string('kelas_tanding_FK');
+            // $table->string('kode_gr');
+            // $table->string('kelas_tanding_FK');
             $table->string('kontingen');
             $table->string('foto')->nullable();
             $table->string('ktp')->nullable();

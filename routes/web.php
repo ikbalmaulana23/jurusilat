@@ -28,10 +28,12 @@ Route::middleware(['guest'])->group(function () {
     Route::get('pendaftaran', [PendaftaranController::class, 'index'])->name('index');
 });
 
+
 Route::middleware(['admin'])->group(function () {
 
     Route::post('masuk', [AuthController::class, 'masuk'])->name('masuk');
     Route::post('daftar', [AuthController::class, 'daftar'])->name('daftar');
+
 
 
     Route::post('daftarpeserta', [PendaftaranController::class, 'input'])->name('daftarpeserta');
