@@ -64,12 +64,12 @@
             <div class="flex flex-col w-56 border-r border-gray-300">
                 <button class="relative text-sm focus:outline-none group">
                     <div class="flex items-center justify-between w-full h-16 px-4 border-b border-gray-300  bg-red-500">
-                       <p class="text-white font-semibold text-xl">Admin</p>
+                       <p class=" font-semibold text-xl">Admin</p>
                       
                     </div>
                
                 </button>
-                <div class="flex flex-col flex-grow p-4 overflow-auto gap-3">
+                <div class="flex flex-col flex-grow p-4 overflow-auto gap-3 text-black">
                    
                    <x-linkadmin></x-linkadmin>
                     
@@ -87,7 +87,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                             </svg>
                         </div>
-                        <div class="absolute right-0 flex-col items-start hidden w-40 pb-1 bg-white border border-gray-300 shadow-lg group-focus:flex">
+                        <div class="absolute right-0 flex-col items-start hidden w-40 pb-1  border border-gray-300 shadow-lg group-focus:flex">
                             <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
                             <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
                             <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
@@ -96,21 +96,14 @@
                 </div>
                 <div class="flex-grow p-6 overflow-auto bg-gray-200">
                    
-                      <div class="rounded-lg bg-white p-5"> 
-                        <p class="text-center text-lg font-semibold">Rekap  Nilai Peserta Silat Sumatera Barat</p>
-                        
-                        @foreach($skorRegus as $skor)
-                        <tr>
-                            <td>{{ $skor->id }}</td>
-                            <td>{{ $skor->pendaftar->nama }}</td> <!-- Menampilkan nama pendaftar -->
-                            <td>{{ $skor->orisinil }}</td>
-                            <td>{{ $skor->kekayaan_teknik }}</td>
-                            <td>{{ $skor->kemantapan_gerak }}</td>
-                            <td>{{ $skor->penampilan }}</td>
-                        </tr>
-                        @endforeach
-
-                    </div>
+                  
+                   
+                        <div class="rounded-lg bg-white p-5"> 
+                            <p class="text-center mb-10 text-lg font-semibold">   Jadwal Pertandingan Silat Sumatera Barat  </p> 
+                            <a href="/inputjadwal" class="bg-red-500 px-3 py-2 text-white rounded-md">Input Jadwal Peserta</a>
+                            
+                      </div>
+              
             </div>
             <!-- Component End  -->
 

@@ -13,6 +13,18 @@
 
 
 
+      <div class="border m-5 py-10 flex"> 
+    
+        @foreach ($detail_peserta_tunggal as $tunggal )
+          
+        <div class="border p-5 ">
+          <p>Name :{{  $tunggal->nama}} </p>
+        </div>
+        @endforeach
+
+      </div>
+
+
 
     {{-- @dd($skors) --}}
 
@@ -21,24 +33,28 @@
       <thead>
           <tr>
             <td>No</td>
+            <td> Nama</td>
             <td>Orisinil</td>
             <td>Kekayaan Teknik</td>
             <td>Kemantapan Gerak</td>
             <td>Penampilan</td>
             <td>Total </td>
+            <td>Aksi </td>
           </tr>
         </thead>
         <tbody>
-          @foreach($skors as $index => $skor)
-        <tr>
-            <td> {{ $index + 1 }}</td>
-            <td>{{ $skor['orisinil'] }}</td>
-            <td>{{ $skor['kekayaan_teknik'] }}</td>
-            <td>{{ $skor['kemantapan_gerak'] }}</td>
-            <td>{{ $skor['penampilan'] }}</td>
-            <td>{{ $skor['total'] }}</td>
-        </tr>
-    @endforeach
+
+
+          @foreach($skor as $item)
+                        <tr>
+                            <td>{{ $item->id }}</td>
+                            <td>{{ $item->pendaftar->nama }}</td> <!-- Menampilkan nama pendaftar -->
+                            <td>{{ $item->orisinil }}</td>
+                            <td>{{ $item->kekayaan_teknik }}</td>
+                            <td>{{ $item->kemantapan_gerak }}</td>
+                            <td>{{ $item->penampilan }}</td>
+                        </tr>
+                        @endforeach
         </tbody>
       </table>
 

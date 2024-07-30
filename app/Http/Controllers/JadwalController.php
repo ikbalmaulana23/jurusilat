@@ -12,7 +12,7 @@ class JadwalController extends Controller
     public function index()
     {
         $data['jadwals'] = Jadwal::all();
-        return view('jadwal.jadwal', $data);
+        return view('admin.tambahjadwal', $data);
     }
 
     public function inputjadwal()
@@ -32,6 +32,6 @@ class JadwalController extends Controller
             ]);
         }
 
-        return redirect('/jadwal')->with('pesan', 'masukan data berhasi  berhasil');
+        return redirect('/admin/tambahjadwal')->with('pesan', 'masukan data berhasi  berhasil');
     }
 }
