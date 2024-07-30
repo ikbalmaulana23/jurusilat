@@ -101,7 +101,7 @@
                         <div class="rounded-lg bg-white p-5"> 
                             <p>   Jumlah Peserta yang daftar dalam Perlombaan Silat Sumatera Barat yaitu : 28 orang   </p> 
                               
-                   
+                            
                       </div>
               
             </div>

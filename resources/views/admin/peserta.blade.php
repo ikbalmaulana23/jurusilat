@@ -100,6 +100,68 @@
                 
                         <p class="text-center text-lg font-semibold">Rekap Peserta Lomba Silat Sumatera Barat</p>
                  
+                        <table class="w-full text-sm text-left rtl:text-right">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">
+                                        Nama
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Jenis Kelamin
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Tempat Lahir
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Tanggal Lahir
+                                    </th>
+                            
+                                    <th scope="col" class="px-6 py-3">
+                                        Kelas
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Asal Sekolah
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Kategori Tanding
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Golongan
+                                    </th>
+                                
+                                
+                                    <th scope="col" class="px-6 py-3">
+                                        Aksi
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                @foreach ($peserta as $row)
+                                    <tr>
+                                        <td class="text-center">{{ $row->nama }}</td>
+                                        <td class="text-center">{{ $row->jen_kelamin }}</td>
+                                        <td class="text-center">{{ $row->tpt_lahir }}</td>
+                                        <td class="text-center">{{ $row->tgl_lahir }}</td>
+                                     
+                                        <td class="text-center">{{ $row->kelas }}</td>
+                                        <td class="text-center">{{ $row->asal_sekolah }}</td>
+                                        <td class="text-center">{{ $row->kategori_tanding }}</td>
+                                        <td class="text-center">{{ $row->golongan }}</td>
+                                      
+                                 
+                                        <td class="flex flex-col">
+                                            <a href="/tampiledit/{{ $row->id }}"
+                                                class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Edit</a>
+                                            <form action="{{ route('delete', $row->id) }}" method="post">
+                                                @csrf
+                                                <button
+                                                    class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"">Hapus</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
             </div>
             <!-- Component End  -->

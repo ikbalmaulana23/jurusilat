@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Skor;
+use App\Models\SkorRegu;
+use App\Models\Pendaftar;
+use App\Models\SkorCeritera;
+use App\Models\SkorPasangan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -19,13 +24,16 @@ class AdminController extends Controller
 
     public function nilai()
     {
-        $data['nilai'] = Skor::get();
 
-        return view('admin.nilai', $data);
+
+        $skorRegus = SkorRegu::with('pendaftar')->get();
+
+        return view('admin.nilai', compact('skorRegus'));
     }
 
     public function peserta()
     {
-        return view('admin.peserta');
+        $data['peserta'] = Pendaftar::get();
+        return view('admin.peserta', $data);
     }
 }

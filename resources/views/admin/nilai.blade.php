@@ -98,7 +98,18 @@
                    
                       <div class="rounded-lg bg-white p-5"> 
                         <p class="text-center text-lg font-semibold">Rekap  Nilai Peserta Silat Sumatera Barat</p>
-                 
+                        @s
+                        @foreach($skorRegus as $skor)
+                        <tr>
+                            <td>{{ $skor->id }}</td>
+                            <td>{{ $skor->pendaftar->nama }}</td> <!-- Menampilkan nama pendaftar -->
+                            <td>{{ $skor->orisinil }}</td>
+                            <td>{{ $skor->kekayaan_teknik }}</td>
+                            <td>{{ $skor->kemantapan_gerak }}</td>
+                            <td>{{ $skor->penampilan }}</td>
+                        </tr>
+                        @endforeach
+
                     </div>
             </div>
             <!-- Component End  -->
