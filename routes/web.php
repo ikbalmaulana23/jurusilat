@@ -55,10 +55,12 @@ Route::post('/inputceritera', [SkorController::class, 'inputceritera'])->name('i
 
 
 Route::get('/jadwal', [JadwalController::class, 'index'])->name('indexjadwal');
-Route::get('/inputjadwal', [JadwalController::class, 'inputjadwal'])->name('inputjadwal');
+
 Route::post('/inputjadwal', [JadwalController::class, 'inputjadwalpeserta'])->name('inputjadwal');
 
 Route::get('admin', [AdminController::class, 'index']);
 Route::get('admin/peserta', [AdminController::class, 'peserta']);
 Route::get('admin/nilai', [AdminController::class, 'nilai']);
 Route::get('admin/liveskor', [AdminController::class, 'liveskor']);
+Route::get('admin/tambahjuri', [AdminController::class, 'tambahjuri']);
+Route::post('admin/tambahjuri', [AdminController::class, 'daftarjuri'])->name('daftarjuri');

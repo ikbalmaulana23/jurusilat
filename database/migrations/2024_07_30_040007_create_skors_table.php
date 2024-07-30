@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('peserta_id')->nullable();
-            $table->foreign('peserta_id')->references('id')->on('pendaftar  ');
+            $table->foreign('peserta_id')->references('id')->on('pendaftar');
             // $table->unsignedBigInteger('id_register')->nullable();
             // $table->foreign('id_regsiter')->references('id')->on('registrasi');
             $table->string('orisinil');

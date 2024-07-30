@@ -13,6 +13,18 @@
 
 
 
+      <div class="border m-5 py-10 flex"> 
+    
+        @foreach ($detail_peserta_tunggal as $tunggal )
+          
+        <div class="border p-5 ">
+          <p>Name :{{  $tunggal->nama}} </p>
+        </div>
+        @endforeach
+
+      </div>
+
+
 
     {{-- @dd($skors) --}}
 
@@ -31,7 +43,7 @@
           </tr>
         </thead>
         <tbody>
-          
+
 
           @foreach($skor as $item)
                         <tr>
