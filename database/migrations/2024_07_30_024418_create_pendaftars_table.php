@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->unsignedBigInteger('id_registrasi');
+            $table->unsignedBigInteger('id_kategori');
             $table->string('jen_kelamin');
             $table->string('tpt_lahir');
             $table->date('tgl_lahir');
@@ -22,7 +23,7 @@ return new class extends Migration
             $table->string('bb');
             $table->string('kelas');
             $table->string('asal_sekolah');
-            $table->string('kategori_tanding');
+            // $table->string('kategori_tanding');
             $table->string('golongan');
             $table->string('kode_gr');
             $table->string('kelas_tanding_FK');
@@ -34,6 +35,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('id_registrasi')->references('id')->on('registrasi');
+            $table->foreign('id_kategori')->references('id')->on('kategori');
         });
     }
 
