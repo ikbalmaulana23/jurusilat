@@ -26,7 +26,7 @@ class AdminController extends Controller
     {
 
 
-        $skorRegus = SkorRegu::with('pendaftar')->get();
+        $skorRegus = Skor::with('pendaftar')->get();
 
         return view('admin.nilai', compact('skorRegus'));
     }
