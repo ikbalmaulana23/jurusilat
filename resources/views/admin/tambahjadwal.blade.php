@@ -99,11 +99,40 @@
                   
                    
                         <div class="rounded-lg bg-white p-5"> 
-                            <p class="text-center mb-10 text-lg font-semibold">   Jadwal Pertandingan Silat Sumatera Barat  </p> 
+                            <p class="text-center mb-10 text-lg">   Jadwal Pertandingan Silat Sumatera Barat  </p> 
                             <a href="/inputjadwal" class="bg-red-500 px-3 py-2 text-white rounded-md">Input Jadwal Peserta</a>
-                            
+                            <div class=" mt-10 flex">
+                                <table class="w-full">
+                                  <thead>  <tr>
+                                    <td>No</td>
+                                    <td>Nama</td>
+                                    <td>Kontingen</td>
+                                    <td>Tanggal/Hari</td>
+                                    <td>Status</td>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                {{-- @dd($jadwals) --}}
+                                
+                                    @foreach ($jadwals as $jadwal )
+                                    <tr>
+                                      <td>1</td>
+                                      <td>{{ $jadwal->nama }}</td>
+                                      <td>{{ $jadwal->kontingen }}</td>
+                                      <td>{{ $jadwal->tanggal_hari }}</td>
+                                      <td>{{ $jadwal->status }}</td>
+                                    </tr>
+                                      
+                                    @endforeach
+                                
+                                
+                                </tbody>
+                                </table>
+                                
+                                
+                                  </div>
                       </div>
-              
+                     
             </div>
             <!-- Component End  -->
 
