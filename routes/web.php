@@ -31,8 +31,6 @@ Route::get('/tampiledit/{id}', [PendaftaranController::class, 'tampiledit'])->na
 Route::post('/updatedata/{id}', [PendaftaranController::class, 'updatedata'])->name('updatedata');
 Route::post('/delete/{id}', [PendaftaranController::class, 'delete'])->name('delete');
 
-Route::post('daftarpesertapasangan', [PendaftaranController::class, 'input_pasangan'])->name('daftarpesertapasangan');
-
 
 Route::get('/pendaftaran', [PendaftaranController::class, 'showPage'])->name('page.show');
 
