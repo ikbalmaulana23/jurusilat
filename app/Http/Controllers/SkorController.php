@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Skor;
 use App\Models\SkorRegu;
+use App\Models\Pendaftar;
+use App\Models\SkorCeritera;
 use App\Models\SkorPasangan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\tunggalrequest;
-use App\Models\SkorCeritera;
 
 class SkorController extends Controller
 {
@@ -19,20 +20,15 @@ class SkorController extends Controller
     //view skor
     public function index()
     {
-        // $data['skor'] = Skor::all();
-        $skors = Skor::all()->map(function ($skor) {
-            return [
-                'orisinil' => $skor->orisinil,
-                'kekayaan_teknik' => $skor->kekayaan_teknik,
-                'kemantapan_gerak' => $skor->kemantapan_gerak,
-                'penampilan' => $skor->penampilan,
-                'total' => $skor->orisinil + $skor->kekayaan_teknik + $skor->kemantapan_gerak + $skor->penampilan
-            ];
-        });
+        $data = [
 
 
+            'skor' => Skor::all(),
+            'detail_peserta_tunggal' => Pendaftar::get()
 
-        return view('penilaian.skor', compact('skors'));
+        ];
+
+        return view('penilaian.skor',  $data);
     }
 
     //view form

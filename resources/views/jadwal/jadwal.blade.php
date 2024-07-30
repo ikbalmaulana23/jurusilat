@@ -2,8 +2,6 @@
 
   <h1 class="text-lg font-semibold text-center">HALAMAN JADWAL</h1>
 
-  <a href="/inputjadwal" class="bg-red-500 px-3 py-2 text-white rounded-md">Input Jadwal Peserta</a>
-
   <div class="border mt-10 flex">
 <table class="w-full">
   <thead>  <tr>

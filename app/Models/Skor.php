@@ -11,5 +11,10 @@ class Skor extends Model
 
     protected $table = 'skor';
 
-    protected $fillable = ['id_register','orisinil', 'kekayaan_teknik', 'kemantapan_gerak', 'penampilan'];
+    protected $fillable = ['id_register', 'orisinil', 'kekayaan_teknik', 'kemantapan_gerak', 'penampilan'];
+
+    public function pendaftar()
+    {
+        return $this->belongsTo(Pendaftar::class, 'peserta_id');
+    }
 }
