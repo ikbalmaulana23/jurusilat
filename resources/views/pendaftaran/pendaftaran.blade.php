@@ -183,7 +183,7 @@
 
             {{-- form untuk pasangan  --}}
             @if($selectedOption == 'pasangan')
-            <form class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-5" action="{{ route('daftarpeserta') }}" method="post"
+            <form class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-5" action="{{ route('daftarpesertapasangan') }}" method="post"
             enctype="multipart/form-data">
                 @csrf
                 <div class="border rounded-lg p-3">
