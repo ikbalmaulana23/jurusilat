@@ -28,10 +28,10 @@ return new class extends Migration
             $table->string('kode_gr');
             $table->string('kelas_tanding_FK');
             $table->string('kontingen');
-            $table->string('foto');
-            $table->string('ktp');
-            $table->string('akta_lahir');
-            $table->string('ijazah');
+            $table->string('foto')->nullable();
+            $table->string('ktp')->nullable();
+            $table->string('akta_lahir')->nullable();
+            $table->string('ijazah')->nullable();
             $table->timestamps();
 
             $table->foreign('id_registrasi')->references('id')->on('registrasi');

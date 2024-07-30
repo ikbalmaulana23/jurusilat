@@ -32,8 +32,7 @@ Route::post('/updatedata/{id}', [PendaftaranController::class, 'updatedata'])->n
 Route::post('/delete/{id}', [PendaftaranController::class, 'delete'])->name('delete');
 
 Route::post('daftarpesertapasangan', [PendaftaranController::class, 'input_pasangan'])->name('daftarpesertapasangan');
-
-
+Route::get('/jadwal', [DashboardController::class, 'jadwal']);
 Route::get('/pendaftaran', [PendaftaranController::class, 'showPage'])->name('page.show');
 
 
