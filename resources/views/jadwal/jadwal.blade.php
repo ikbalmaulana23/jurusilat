@@ -13,6 +13,8 @@
   </tr>
 </thead>
 <tbody>
+{{-- @dd($jadwals) --}}
+
     @foreach ($jadwals as $jadwal )
     <tr>
       <td>1</td>
