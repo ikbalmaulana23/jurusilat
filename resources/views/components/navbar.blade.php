@@ -18,7 +18,6 @@
           <x-nav-link href="/skor" :active="request()->is('skor')">Skor</x-nav-link>
           <x-nav-link href="/jadwal" :active="request()->is('jadwal')">Jadwal</x-nav-link>
           <x-nav-link href="/pendaftaran" :active="request()->is('pendaftaran')">Pendaftaran</x-nav-link>
-
         </ul>
       </div>
     </div>
