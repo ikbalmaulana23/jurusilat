@@ -19,20 +19,12 @@ class SkorController extends Controller
     //view skor
     public function index()
     {
-        // $data['skor'] = Skor::all();
-        $skors = Skor::all()->map(function ($skor) {
-            return [
-                'orisinil' => $skor->orisinil,
-                'kekayaan_teknik' => $skor->kekayaan_teknik,
-                'kemantapan_gerak' => $skor->kemantapan_gerak,
-                'penampilan' => $skor->penampilan,
-                'total' => $skor->orisinil + $skor->kekayaan_teknik + $skor->kemantapan_gerak + $skor->penampilan
-            ];
-        });
+        $skor = Skor::with('pendaftar')->get();
 
 
 
-        return view('penilaian.skor', compact('skors'));
+
+        return view('penilaian.skor',  compact('skor'));
     }
 
     //view form
