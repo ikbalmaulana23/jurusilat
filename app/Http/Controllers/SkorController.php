@@ -28,13 +28,13 @@ class SkorController extends Controller
 
         ];
 
-        return view('penilaian.skor',  $data);
+        return view('juri.skor',  $data);
     }
 
     //view form
     public function skorlomba()
     {
-        return view('penilaian.formtunggal');
+        return view('juri.formtunggal');
     }
 
 
@@ -66,14 +66,14 @@ class SkorController extends Controller
                 'total' => $skor->orisinil + $skor->kekayaan_teknik + $skor->kemantapan_gerak + $skor->penampilan
             ];
         });
-        return view('penilaian.skorpasangan', compact('skors'));
+        return view('juri.skorpasangan', compact('skors'));
     }
     //view form
     public function formpasangan()
     {
 
 
-        return view('penilaian.formpasangan');
+        return view('juri.formpasangan');
     }
     //post input
     public function inputpasangan(tunggalrequest $r)
@@ -103,13 +103,13 @@ class SkorController extends Controller
             ];
         });
 
-        return view('penilaian.skorregu', compact('skors'));
+        return view('juri.skorregu', compact('skors'));
     }
 
     //view form regu
     public function formregu()
     {
-        return view('penilaian.formregu');
+        return view('juri.formregu');
     }
 
     //post input regu
@@ -140,12 +140,12 @@ class SkorController extends Controller
             ];
         });
 
-        return view('penilaian.skorceritera', compact('skors'));
+        return view('juri.skorceritera', compact('skors'));
     }
 
     public function formceritera()
     {
-        return view('penilaian.formceritera');
+        return view('juri.formceritera');
     }
 
 

@@ -14,6 +14,5 @@ class PendaftarSeeder extends Seeder
      */
     public function run(): void
     {
-        Pendaftar::factory()->count(10)->create();
     }
 }

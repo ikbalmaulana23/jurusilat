@@ -27,14 +27,14 @@
         <div class="p-4">
           <ul class="space-y-1">
             <li>
-              <a href="/juri" class="flex items-center bg-red-200 rounded-xl font-bold text-sm text-red-900 py-3 px-4">
+              <a href="/juri" class="flex items-center bg-white  rounded-xl font-bold text-sm  py-3 px-4 text-gray-900 ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="text-lg mr-4" viewBox="0 0 16 16">
                   <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
                 </svg>Mulai Penjurian
               </a>
             </li>
             <li>
-              <a href="/rekapnilai" class="flex bg-white hover:bg-red-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4">
+              <a href="/rekapnilai" class="flex  bg-red-200 hover:bg-red-50 rounded-xl font-bold text-sm py-3 px-4 text-red-900">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="text-lg mr-4" viewBox="0 0 16 16">
                   <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5 4h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm0 2h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1z"/>
                 </svg>Rekap Nilai
@@ -67,31 +67,23 @@
           </div>
           <div class="container md:mx-auto mb-5 ">
       
-            <br>
-              <a href="/skorlomba" class="px-3 py-2 text-base font-medium text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 rounded-lg text-center dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-800">Mulai Penilaian Tunggal</a>
+          
       
-      
-      
-            <div class=" m-5 py-10 grid grid-cols-4"> 
-
-              @foreach ($detail_peserta_tunggal as $tunggal )
+            <div class=" m-5 py-2 flex"> 
+          
+              {{-- @foreach ($detail_peserta_tunggal as $tunggal )
                 
-              <div class=" p-5 border rounded-md shadow-sm  ">
-                <p>Nama Peserta : <span class="font-semibold">{{  $tunggal->nama}}</span> </p>
-                <p>Golongan : {{  $tunggal->golongan}} </p>
-                <p>Kontingen : {{  $tunggal->kontingen}} </p>
-                
-                
-
+              <div class=" p-5 ">
+                <p>Name :{{  $tunggal->nama}} </p>
               </div>
-              @endforeach
+              @endforeach --}}
       
             </div>
       
       
       
           {{-- @dd($skors) --}}
-{{--       
+      
             <p class="text-center font-semibold my-3"> Hasil PenilaianTunggal</p>
             <table class="w-full">
             <thead>
@@ -122,7 +114,7 @@
               </tbody>
             </table>
       
-       --}}
+      
           </div>
 
         </div>

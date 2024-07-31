@@ -17,6 +17,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.8.10/tailwind.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css" />
   </head>
 <body>
@@ -77,22 +78,17 @@
 
             </div>
             <div class="flex flex-col flex-grow">
-                <div class="flex items-center flex-shrink-0 h-16 px-8 border-b border-gray-300">
-                    <h1 class="text-lg font-medium">Juri Silat</h1>
+                <div class="flex items-center justify-between  h-16 px-8 border-b border-gray-300">
+                    <h1 class="text-lg font-medium">Sistem Digital Score  Silat Tradisional di Sumatera Barat</h1>
                   
-                   
-                    <button class="relative ml-2 text-sm focus:outline-none group">
-                        <div class="flex items-center justify-between w-10 h-10 rounded hover:bg-gray-300">
-                            <svg class="w-5 h-5 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                            </svg>
-                        </div>
-                        <div class="absolute right-0 flex-col items-start hidden w-40 pb-1  border border-gray-300 shadow-lg group-focus:flex">
-                            <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
-                            <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
-                            <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
-                        </div>
-                    </button>
+                    <div class=" flex gap-2">
+                        <p class=" px-2 py-1 text-lg font-serif">{{ optional(auth()->user())->name
+           ?? ''}}</p> 
+           <p class="px-2 py-1">|</p>
+                    <a href="/logout" class="bg-yellow-500 px-2 py-1 rounded-md ">Logout <i class="fa-solid fa-right-from-bracket"></i></a>
+                    </div>
+                  
+                  
                 </div>
                 <div class="flex-grow p-6 overflow-auto bg-gray-200">
                    

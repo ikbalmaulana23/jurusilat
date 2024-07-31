@@ -18,8 +18,8 @@ class admin
     {
 
         if (Auth::check()) {
-            return redirect('/');
+            return $next($request);
         }
-        return $next($request);
+        return redirect()->route('login');
     }
 }

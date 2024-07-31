@@ -13,29 +13,22 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/login', function () {
     return view('auth.login');
-});
-
-
-Route::get('/', [DashboardController::class, 'index'])->name('index');
+})->name('login');
 Route::get('/registrasi', function () {
     return view('auth.registrasi');
 });
-// Route::get('logout')
+
+Route::post('masuk', [AuthController::class, 'masuk'])->name('masuk');
+Route::post('daftar', [AuthController::class, 'daftar'])->name('daftar');
 
 
-Route::middleware(['guest'])->group(function () {
+Route::get('/', [DashboardController::class, 'index'])->name('index');
+Route::get('pendaftaran', [PendaftaranController::class, 'index'])->name('index');
 
-    Route::get('pendaftaran', [PendaftaranController::class, 'index'])->name('index');
-});
 
 
 Route::middleware(['admin'])->group(function () {
-
-    Route::post('masuk', [AuthController::class, 'masuk'])->name('masuk');
-    Route::post('daftar', [AuthController::class, 'daftar'])->name('daftar');
-
-
-
+    Route::get('logout', [AuthController::class, 'keluar'])->name('keluar');
     Route::post('daftarpeserta', [PendaftaranController::class, 'input'])->name('daftarpeserta');
     Route::get('/tampiledit/{id}', [PendaftaranController::class, 'tampiledit'])->name('tampiledit');
     Route::post('/updatedata/{id}', [PendaftaranController::class, 'updatedata'])->name('updatedata');
@@ -46,7 +39,7 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/pendaftaran', [PendaftaranController::class, 'showPage'])->name('page.show');
 
 
-    Route::get('/skor', [SkorController::class, 'index'])->name('indexskor');
+
     Route::get('/skorlomba', [SkorController::class, 'skorlomba'])->name('skorlomba');
     Route::post('/tunggal', [SkorController::class, 'tunggal'])->name('skortunggal');
 
@@ -62,23 +55,18 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/skorceritera', [SkorController::class, 'skorceritera'])->name('skorceritera');
     Route::get('/formceritera', [SkorController::class, 'formceritera'])->name('formceritera');
     Route::post('/inputceritera', [SkorController::class, 'inputceritera'])->name('inputceritera');
-});
-
-
-Route::get('admin', [AdminController::class, 'index']);
-Route::get('admin/peserta', [AdminController::class, 'peserta']);
-Route::get('admin/nilai', [AdminController::class, 'nilai']);
-Route::get('admin/liveskor', [AdminController::class, 'liveskor']);
-Route::get('admin/tambahjuri', [AdminController::class, 'tambahjuri']);
-Route::post('admin/tambahjuri', [AdminController::class, 'daftarjuri'])->name('daftarjuri');
-Route::get('admin/tambahjadwal', [JadwalController::class, 'index'])->name('indexjadwal');
-Route::get('/inputjadwal', [JadwalController::class, 'inputjadwal']);
-Route::post('/inputjadwal', [JadwalController::class, 'inputjadwalpeserta'])->name('inputjadwal');
 
 
 
-
-
-Route::middleware(['juri'])->group(function () {
+    Route::get('admin', [AdminController::class, 'index']);
+    Route::get('admin/peserta', [AdminController::class, 'peserta']);
+    Route::get('admin/nilai', [AdminController::class, 'nilai']);
+    Route::get('admin/liveskor', [AdminController::class, 'liveskor']);
+    Route::get('admin/tambahjuri', [AdminController::class, 'tambahjuri']);
+    Route::post('admin/tambahjuri', [AdminController::class, 'daftarjuri'])->name('daftarjuri');
+    Route::get('admin/tambahjadwal', [JadwalController::class, 'index'])->name('indexjadwal');
+    Route::get('/inputjadwal', [JadwalController::class, 'inputjadwal']);
+    Route::post('/inputjadwal', [JadwalController::class, 'inputjadwalpeserta'])->name('inputjadwal');
     Route::get('juri', [JuriController::class, 'index']);
+    Route::get('rekapnilai', [JuriController::class, 'rekapnilai']);
 });

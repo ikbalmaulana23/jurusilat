@@ -18,6 +18,8 @@ class PendaftarFactory extends Factory
     {
         return [
             'nama' => $this->faker->name(),
+            'id_registrasi' => $this->numberBetween(1, 10),
+            'id_kategori' => $this->numberBetween(1, 10),
             'jen_kelamin' => $this->faker->randomElement(['Laki-laki', 'Perempuan']),
             'tpt_lahir' => $this->faker->city(),
             'tgl_lahir' => $this->faker->date(),
