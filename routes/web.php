@@ -27,46 +27,45 @@ Route::get('pendaftaran', [PendaftaranController::class, 'index'])->name('index'
 
 
 
-Route::middleware(['admin'])->group(function () {
-    Route::get('logout', [AuthController::class, 'keluar'])->name('keluar');
-    Route::post('daftarpeserta', [PendaftaranController::class, 'input'])->name('daftarpeserta');
-    Route::get('/tampiledit/{id}', [PendaftaranController::class, 'tampiledit'])->name('tampiledit');
-    Route::post('/updatedata/{id}', [PendaftaranController::class, 'updatedata'])->name('updatedata');
-    Route::post('/delete/{id}', [PendaftaranController::class, 'delete'])->name('delete');
 
-    Route::post('daftarpesertapasangan', [PendaftaranController::class, 'input_pasangan'])->name('daftarpesertapasangan');
-    Route::get('/jadwal', [DashboardController::class, 'jadwal']);
-    Route::get('/pendaftaran', [PendaftaranController::class, 'showPage'])->name('page.show');
-
-
-
-    Route::get('/skorlomba', [SkorController::class, 'skorlomba'])->name('skorlomba');
-    Route::post('/tunggal', [SkorController::class, 'tunggal'])->name('skortunggal');
-
-    Route::get('/skorpasangan', [SkorController::class, 'skorpasangan'])->name('skorpasangan');
-    Route::get('/formpasangan', [SkorController::class, 'formpasangan'])->name('formpasangan');
-    Route::post('/skorpasangan', [SkorController::class, 'inputpasangan'])->name('inputpasangan');
-
-
-    Route::get('/skorregu', [SkorController::class, 'skorregu'])->name('skorregu');
-    Route::get('/formregu', [SkorController::class, 'formregu'])->name('formregu');
-    Route::post('/inputregu', [SkorController::class, 'inputregu'])->name('inputregu');
-
-    Route::get('/skorceritera', [SkorController::class, 'skorceritera'])->name('skorceritera');
-    Route::get('/formceritera', [SkorController::class, 'formceritera'])->name('formceritera');
-    Route::post('/inputceritera', [SkorController::class, 'inputceritera'])->name('inputceritera');
+Route::get('logout', [AuthController::class, 'keluar'])->name('keluar');
+Route::post('daftarpeserta', [PendaftaranController::class, 'input'])->name('daftarpeserta');
+Route::get('/tampiledit/{id}', [PendaftaranController::class, 'tampiledit'])->name('tampiledit');
+Route::post('/updatedata/{id}', [PendaftaranController::class, 'updatedata'])->name('updatedata');
+Route::post('/delete/{id}', [PendaftaranController::class, 'delete'])->name('delete');
+Route::post('daftarpesertapasangan', [PendaftaranController::class, 'input_pasangan'])->name('daftarpesertapasangan');
+Route::get('/jadwal', [DashboardController::class, 'jadwal']);
+Route::get('/pendaftaran', [PendaftaranController::class, 'showPage'])->name('page.show');
 
 
 
-    Route::get('admin', [AdminController::class, 'index']);
-    Route::get('admin/peserta', [AdminController::class, 'peserta']);
-    Route::get('admin/nilai', [AdminController::class, 'nilai']);
-    Route::get('admin/liveskor', [AdminController::class, 'liveskor']);
-    Route::get('admin/tambahjuri', [AdminController::class, 'tambahjuri']);
-    Route::post('admin/tambahjuri', [AdminController::class, 'daftarjuri'])->name('daftarjuri');
-    Route::get('admin/tambahjadwal', [JadwalController::class, 'index'])->name('indexjadwal');
-    Route::get('/inputjadwal', [JadwalController::class, 'inputjadwal']);
-    Route::post('/inputjadwal', [JadwalController::class, 'inputjadwalpeserta'])->name('inputjadwal');
-    Route::get('juri', [JuriController::class, 'index']);
-    Route::get('rekapnilai', [JuriController::class, 'rekapnilai']);
-});
+Route::get('/skorlomba/{id}', [SkorController::class, 'skorlombabyid']);
+Route::post('/tunggal', [SkorController::class, 'tunggal'])->name('skortunggal');
+
+Route::get('/skorpasangan', [SkorController::class, 'skorpasangan'])->name('skorpasangan');
+Route::get('/formpasangan', [SkorController::class, 'formpasangan'])->name('formpasangan');
+Route::post('/skorpasangan', [SkorController::class, 'inputpasangan'])->name('inputpasangan');
+
+
+Route::get('/skorregu', [SkorController::class, 'skorregu'])->name('skorregu');
+Route::get('/formregu', [SkorController::class, 'formregu'])->name('formregu');
+Route::post('/inputregu', [SkorController::class, 'inputregu'])->name('inputregu');
+
+Route::get('/skorceritera', [SkorController::class, 'skorceritera'])->name('skorceritera');
+Route::get('/formceritera', [SkorController::class, 'formceritera'])->name('formceritera');
+Route::post('/inputceritera', [SkorController::class, 'inputceritera'])->name('inputceritera');
+
+
+
+Route::get('admin', [AdminController::class, 'index']);
+Route::get('admin/peserta', [AdminController::class, 'peserta']);
+Route::get('admin/nilai', [AdminController::class, 'nilai']);
+Route::get('admin/tambahjuri', [AdminController::class, 'tambahjuri']);
+Route::post('admin/tambahjuri', [AdminController::class, 'daftarjuri'])->name('daftarjuri');
+Route::get('admin/tambahjadwal', [JadwalController::class, 'index'])->name('indexjadwal');
+Route::get('/inputjadwal', [JadwalController::class, 'inputjadwal']);
+Route::post('/inputjadwal', [JadwalController::class, 'inputjadwalpeserta'])->name('inputjadwal');
+Route::get('juri', [JuriController::class, 'index']);
+Route::get('rekapnilai', [JuriController::class, 'rekapnilai']);
+Route::get('admin/dashliveskor', [AdminController::class, 'dashliveskor']);
+Route::get('admin/liveskor/{id}', [AdminController::class, 'liveskor']);

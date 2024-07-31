@@ -44,4 +44,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function skor()
+    {
+        return $this->hasMany(Skor::class, 'id_juri');
+    }
 }

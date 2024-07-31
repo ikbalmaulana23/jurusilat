@@ -17,6 +17,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.8.10/tailwind.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css" />
   </head>
 <body>
@@ -64,12 +65,12 @@
             <div class="flex flex-col w-56 border-r border-gray-300">
                 <button class="relative text-sm focus:outline-none group">
                     <div class="flex items-center justify-between w-full h-16 px-4 border-b border-gray-300  bg-red-500">
-                       <p class="text-white font-semibold text-xl">Admin</p>
+                       <p class=" font-semibold text-xl">Admin</p>
                       
                     </div>
                
                 </button>
-                <div class="flex flex-col flex-grow p-4 overflow-auto gap-3">
+                <div class="flex flex-col flex-grow p-4 overflow-auto gap-3 text-black">
                    
                    <x-linkadmin></x-linkadmin>
                     
@@ -90,41 +91,32 @@
                   
                 </div>
                 <div class="flex-grow p-6 overflow-auto bg-gray-200">
+
                    
-                      <div class="rounded-lg bg-white p-5"> 
-                        <p class="text-center text-lg font-semibold">Rekap  Nilai Peserta Silat Sumatera Barat</p>
-                        
-                        <table class="w-full">
-                            <thead>
-                                <tr>
-                                  <td>No</td>
-                                  <td> Nama</td>
-                                  <td>Juri</td>
-                                  <td>Orisinil</td>
-                                  <td>Kekayaan Teknik</td>
-                                  <td>Kemantapan Gerak</td>
-                                  <td>Penampilan</td>
-                                  <td>Total </td>
-                                  <td>Aksi </td>
-                                </tr>
-                              </thead>
-                              <tbody>
-                        @foreach($skor as $sk)
-                        <tr>
-                            <td>1</td>
-                            <td>{{ $sk->pendaftar->nama }}</td> <!-- Menampilkan nama pendaftar -->
-                            <td>{{ $sk->id_juri }}</td>
-                            <td>{{ $sk->orisinil }}</td>
-                            <td>{{ $sk->kekayaan_teknik }}</td>
-                            <td>{{ $sk->kemantapan_gerak }}</td>
-                            <td>{{ $sk->penampilan }}</td>
-                            <td>{{ $sk->total }}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-          
+
+                    <div class="bg-white p-3 mb-5">
+                        <div class=" m-5 py-10 grid grid-cols-4">   
+                    @foreach ($detail_peserta_tunggal as $tunggal )
+                
+                    <div class=" bg-gradient-to-r from-red-200 to-yellow-300      p-5 border rounded-md shadow-md  ">
+                      <p>Nama Peserta : <span class="font-semibold">{{  $tunggal->nama}}</span> </p>
+                      <p>Golongan : {{  $tunggal->golongan}} </p>
+                      <p class="mb-3">Kontingen : {{  $tunggal->kontingen}} </p>
+                      
+                      <div class="flex justify-center">
+                        <a href="/admin/liveskor/{{$tunggal->id}}" class=" my-2 px-2 py-1 bg-green-700  transform hover:scale-110 text-white rounded-md" >Nilai Peserta ini</a>
+                      </div>
+                      
+                      
+      
                     </div>
+                    @endforeach
+                </div>  
+
+                </div>
+                   
+                        
+              
             </div>
             <!-- Component End  -->
 

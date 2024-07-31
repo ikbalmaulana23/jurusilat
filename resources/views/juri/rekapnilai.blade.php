@@ -90,6 +90,7 @@
                 <tr>
                   <td>No</td>
                   <td> Nama</td>
+                  <td>Juri</td>
                   <td>Orisinil</td>
                   <td>Kekayaan Teknik</td>
                   <td>Kemantapan Gerak</td>
@@ -99,23 +100,27 @@
                 </tr>
               </thead>
               <tbody>
-      
-      
+
+                
+                {{-- @dd($skor) --}}
                 @foreach($skor as $item)
                               <tr>
-                                  <td>{{ $item->id }}</td>
-                                  <td>{{ $item->pendaftar->nama }}</td> <!-- Menampilkan nama pendaftar -->
+                                  <td>1</td>
+                                  <td>{{ $item->pendaftar->nama }}</td> 
+                                  <td>{{ $item->juri->name }}</td> 
                                   <td>{{ $item->orisinil }}</td>
                                   <td>{{ $item->kekayaan_teknik }}</td>
                                   <td>{{ $item->kemantapan_gerak }}</td>
                                   <td>{{ $item->penampilan }}</td>
+                                  <td>{{ $item->total }}</td>
                               </tr>
+                              
                               @endforeach
               </tbody>
             </table>
       
       
-          </div>
+          </div>  
 
         </div>
       </div>

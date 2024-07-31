@@ -6,27 +6,18 @@
     <main class="">
         <div class="container md:mx-auto">
     
-           <div class="">
-            <h1 class="text-center">Inpur Skor Perlombaan Silat Tradisional</h1>
-            <h1 class="text-center">Sumatra Barat</h1>  
-           </div>
-    
-        <div class="border">
+        <div class="w-1/2 mx-auto  mb-5 rounded-md shadow-md p-3">
             <h1 class="ml-28 font-semibold ">Data Peserta</h1>
-            <div class="w-1/4 border grid grid-cols-2">
-    
-                <p>Nama</p> <p>Abdul    </p>
-                <p>Kategori Tanding</p> <p>Tunggal</p>
-                <p>Golongan</p> <p>Desawa</p>
-                <p>Kode GR  </p> <p>B83</p>
-                <p>Kelas Tanding</p> <p>Dewasa Ringan</p>
+            <div class="w-1/2  grid grid-cols-2">
+                    {{-- @dd($pendaftar) --}}
+                <p>Nama</p> <p>{{ $pendaftar->nama_peserta }}</p>
+                <p>Kategori Tanding</p> <p>{{ $pendaftar->nama }}</p>
+                <p>Golongan</p> <p>{{ $pendaftar->golongan }}</p>
+                
             </div>
     
         </div>
-            <div class="flex">
-                <h1>Juri</h1>
-                <p>: Dt. Bagindo Ali</p>
-            </div>
+          
     
             <div class="flex justify-center">
                 <div class="basis-3/4 border rounded-md p-5">
@@ -36,9 +27,19 @@
                 </div>
                 <form action="{{ route('skortunggal') }}" method="post">
                     @csrf
+                    <div>
+                        <input type="hidden" value="{{ $pendaftar->id }}" name="peserta_id">
+                    </div>
+                    <div>
+                        <input type="hidden" value="{{ $pendaftar->id_registrasi }}" name="id_registrasi">
+                    </div>
+                    <div>
+                        <input type="hidden" value="{{ Auth::guard('')->user()->id }}" name="id_juri">
+                    </div>
                 <div class="grid grid-cols-2 gap-7 mt-10">
                      
-    
+                   
+
                     <div class="border border-black p-3 rounded-md">
                         <p class="font-semibold">Keaslian Pencak Silat <span class="font-normal text-gray-500">(Max 25)</span> </p>
                     </div>  
@@ -52,6 +53,7 @@
                     <div class="border border-black p-3 rounded-md">
                         <input type="number" style="border: none" class="w-full" name="kekayaan_teknik">
                     </div>
+                    
                     <div class="border border-black p-3 rounded-md">
                         <p class="font-semibold">Kekayaan Gerakan <span class="font-normal text-gray-500">(Max 25)</span></p>
                     </div>
@@ -64,17 +66,12 @@
                     <div class="border border-black p-3 rounded-md">
                         <input type="number" style="border: none" class="w-full" name="penampilan">
                     </div>
-                    <div>
-                        <h1 class="text-white"> f</h1>
-                    </div>
-                    <div class="border border-black p-3 rounded-md flex">
-                        <label for="total">Total</label>
-                       <div></div>
-                    </div>
+                    
+                   
     
                 </div>
-                <div class="flex justify-end mt-4">
-                    <button type="submit" class="bg-blue-500 px-3 py-2 rounded-md text-white">Upload Skor</button>
+                <div class="flex justify-center mt-4">
+                    <button type="submit" class="bg-blue-500 px-20 mt-3 py-2 rounded-md text-white">Upload Skor</button>
                 </div>
             </form>
     

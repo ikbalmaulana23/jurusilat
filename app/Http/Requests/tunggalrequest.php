@@ -22,6 +22,9 @@ class tunggalrequest extends FormRequest
     public function rules(): array
     {
         return [
+            'peserta_id' => 'required',
+            'id_registrasi' => 'required',
+            'id_juri' => 'required',
             'orisinil' => 'required',
             'kekayaan_teknik' => 'required',
             'kemantapan_gerak' => 'required',
@@ -33,6 +36,9 @@ class tunggalrequest extends FormRequest
     public function messages(): array
     {
         return [
+            'peserta_id.required' => 'data harus diiisikan',
+            'id_registrasi.required' => 'data harus diisikan',
+            'id_juri.required' => 'data harus diisikan',
             'orisinil.required' => 'data harus diisikan',
             'kekayaaan_teknik.required' => 'data harus diisikan',
             'kemantapan_gerak.required' => 'data harus diisikan',

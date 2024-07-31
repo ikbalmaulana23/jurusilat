@@ -31,10 +31,18 @@ class SkorController extends Controller
         return view('juri.skor',  $data);
     }
 
-    //view form
-    public function skorlomba()
+
+    public function skorlombabyid($id)
     {
-        return view('juri.formtunggal');
+
+        $data['pendaftar'] = DB::table('pendaftar')
+            ->select('*', 'pendaftar.id as id', 'pendaftar.nama as nama_peserta')
+            ->where('pendaftar.id', $id)
+            ->join('kategori', 'pendaftar.id_kategori', '=', 'kategori.id')
+            ->first();
+
+
+        return view('juri.formtunggal', $data);
     }
 
 
@@ -43,14 +51,20 @@ class SkorController extends Controller
     {
 
         if ($r->validated()) {
+
+            $total = $r->orisinil + $r->kekayaan_teknik + $r->kemantapan_gerak + $r->penampilan;
             Skor::create([
+                'peserta_id' => $r->peserta_id,
+                'id_registrasi' => $r->id_registrasi,
+                'id_juri' => $r->id_juri,
                 'orisinil' => $r->orisinil,
                 'kekayaan_teknik' => $r->kekayaan_teknik,
                 'kemantapan_gerak' => $r->kemantapan_gerak,
-                'penampilan' => $r->penampilan
+                'penampilan' => $r->penampilan,
+                'total' => $total
             ]);
         }
-        return redirect('/skor')->with('pesan', 'input data berhasil');
+        return redirect('/rekapnilai')->with('pesan', 'input data berhasil');
     }
 
 
@@ -71,8 +85,6 @@ class SkorController extends Controller
     //view form
     public function formpasangan()
     {
-
-
         return view('juri.formpasangan');
     }
     //post input

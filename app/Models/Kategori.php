@@ -12,4 +12,9 @@ class Kategori extends Model
     protected $table = 'kategori';
 
     protected $fillable = 'nama';
+
+    // public function kategori()
+    // {
+    //     return $this->hasMany(Skor::class, 'id_kategori');
+    // }
 }

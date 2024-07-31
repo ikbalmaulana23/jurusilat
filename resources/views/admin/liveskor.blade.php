@@ -22,9 +22,11 @@
             <p class="text-xl  font-semibold pt-10 text-center bg-blue"> <span class="px-2 py-1 bg-blue-300 bg-opacity-15">Liveskor Penjurian Silat Tradisional Sumatera Barat</span>  </p>
             <a href="/admin" class="bg-white bg-opacity-10 px-2 py-1 rounded-md ml-10" onclick="return confirm('Apakah anda yakin?')"><i class="fa-solid fa-arrow-left-long"></i> Kembali ke Admin</a>
             <div class="m-10 flex">
+                
                 <div class="basis-1/4">
-                    <p>Nama Peserta : Abdul Manaf</p>
-                    <p>Golongan : Tunggal</p>
+                    <p>Nama Peserta : {{ $peserta->nama }}</p>
+                    <p>Golongan : {{ $peserta->golongan }}</p>
+                    <p>Kode pertandingan : {{ $peserta->id }}</p>
                 </div>
                 <div class="basis-2/4 flex flex-col justify-center  ">
                     <div class="flex justify-center" id="l_timer">
@@ -38,26 +40,29 @@
                     </div>
                 </div>
 
-               
+                
                 
             </div>
 
             <div class="flex m-10 pt-10 justify-around">
                 <div class="border rounded-md bg-blue-300 p-3 text-center space-y-3">
                     <h1 class="">Juri 1 </h1>
-                    <p class="text-5xl font-bold ">Skor</p>
+                    <p class="text-5xl font-bold ">
+                        
+                        {{ $juri1[0]['total'] ?? 'Skor' }}
+                        </p>
                     <p>Datuak Bagindo Ali</p>
                 </div>
 
                 <div class="border rounded-md bg-blue-300 p-3 text-center space-y-3">
                     <h1 class="">Juri 2 </h1>
-                    <p class="text-5xl font-bold ">Skor</p>
+                    <p class="text-5xl font-bold ">{{ $juri2[0]['total'] ?? 'Skor' }}</p>
                     <p>Datuak Bagindo Ali</p>
                 </div>
 
                 <div class="border rounded-md bg-blue-300 p-3 text-center space-y-3">
                     <h1 class="">Juri 3 </h1>
-                    <p class="text-5xl font-bold ">Skor</p>
+                    <p class="text-5xl font-bold ">{{ $juri3[0]['total'] ?? 'Skor' }}</p>
                     <p>Datuak Bagindo Ali</p>
                 </div>
             </div>
@@ -68,7 +73,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Set the countdown time (10 minutes = 600 seconds)
-            var countdownTime = 10 * 60;
+            var countdownTime = 1 * 60;
             var countdownElement = document.getElementById('countdown');
             var pauseButton = document.getElementById('pauseButton');
             var startButton = document.getElementById('startButton');
@@ -96,6 +101,8 @@
                         if (countdownTime <= 0) {
                             clearInterval(countdownInterval);
                             countdownElement.innerHTML = "SELESAI";
+                            location.reload();
+
                         } else {
                             countdownTime--;
                         }

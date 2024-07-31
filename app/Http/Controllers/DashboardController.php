@@ -10,8 +10,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $data['peserta'] = Pendaftar::get();
-        return view('dashboard', $data);
+
+        return view('dashboard');
     }
 
     public function jadwal()
