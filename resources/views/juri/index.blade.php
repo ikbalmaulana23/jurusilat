@@ -81,6 +81,7 @@
                 <p>Golongan : {{  $tunggal->golongan}} </p>
                 <p>Kontingen : {{  $tunggal->kontingen}} </p>
                 
+                <a href="/skorlomba", {{$tunggal->id_peserta}} class="px-2 py-1 bg-green-700" >Nilai Peserta</a>
                 
 
               </div>
