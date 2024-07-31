@@ -16,12 +16,15 @@ return new class extends Migration
 
             $table->unsignedBigInteger('peserta_id')->nullable();
             $table->foreign('peserta_id')->references('id')->on('pendaftar');
-            // $table->unsignedBigInteger('id_register')->nullable();
-            // $table->foreign('id_regsiter')->references('id')->on('registrasi');
-            $table->string('orisinil');
-            $table->string('kekayaan_teknik');
-            $table->string('kemantapan_gerak');
-            $table->string('penampilan');
+            $table->unsignedBigInteger('id_registrasi')->nullable();
+            $table->foreign('id_registrasi')->references('id')->on('registrasi');
+            $table->unsignedBigInteger('id_juri')->nullable();
+            $table->foreign('id_juri')->references('id')->on('users');
+            $table->integer('orisinil');
+            $table->integer('kekayaan_teknik');
+            $table->integer('kemantapan_gerak');
+            $table->integer('penampilan');
+            $table->integer('total');
             $table->timestamps();
         });
     }

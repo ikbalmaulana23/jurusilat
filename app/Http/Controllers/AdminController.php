@@ -20,18 +20,40 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
-    public function liveskor()
+    public function liveskor($id)
     {
-        return view('admin.liveskor');
+
+        // $skor = Skor::with('pendaftar')->get();
+        $data = [
+            'peserta' => Pendaftar::find($id),
+            'juri1' => Skor::where('id_juri', 1)->get(),
+            'juri2' => Skor::where('id_juri', 2)->get(),
+            'juri3' => Skor::where('id_juri', 3)->get(),
+
+        ];
+
+
+        return view('admin.liveskor', $data);
+    }
+
+    public function dashliveskor()
+    {
+        $data = [
+
+            'detail_peserta_tunggal' => Pendaftar::get()
+
+        ];
+
+        return view('admin.dashliveskor', $data);
     }
 
     public function nilai()
     {
 
 
-        $skorRegus = Skor::with('pendaftar')->get();
+        $skor = Skor::with('pendaftar')->get();
 
-        return view('admin.nilai', compact('skorRegus'));
+        return view('admin.nilai', compact('skor'));
     }
 
     public function peserta()

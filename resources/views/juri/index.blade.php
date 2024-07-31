@@ -68,18 +68,22 @@
           <div class="container md:mx-auto mb-5 ">
       
             <br>
-              <a href="/skorlomba" class="px-3 py-2 text-base font-medium text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 rounded-lg text-center dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-800">Mulai Penilaian Tunggal</a>
+             
       
       
       
             <div class=" m-5 py-10 grid grid-cols-4"> 
-
+              {{-- @dd($detail_peserta_tunggal) --}}
               @foreach ($detail_peserta_tunggal as $tunggal )
                 
-              <div class=" p-5 border rounded-md shadow-sm  ">
+              <div class=" p-5 border rounded-md shadow-md  ">
                 <p>Nama Peserta : <span class="font-semibold">{{  $tunggal->nama}}</span> </p>
                 <p>Golongan : {{  $tunggal->golongan}} </p>
-                <p>Kontingen : {{  $tunggal->kontingen}} </p>
+                <p class="mb-3">Kontingen : {{  $tunggal->kontingen}} </p>
+                
+                <div class="flex justify-center">
+                  <a href="/skorlomba/{{$tunggal->id}}" class=" my-2 px-2 py-1 bg-green-700 text-white rounded-md" >Nilai Peserta ini</a>
+                </div>
                 
                 
 

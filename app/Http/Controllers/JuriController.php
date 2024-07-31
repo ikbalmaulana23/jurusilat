@@ -12,8 +12,6 @@ class JuriController extends Controller
     {
         $data = [
 
-
-            'skor' => Skor::all(),
             'detail_peserta_tunggal' => Pendaftar::get()
 
         ];
@@ -24,6 +22,7 @@ class JuriController extends Controller
     {
         $data = [
             'skor' => Skor::all(),
+
 
         ];
         return view('juri.rekapnilai', $data);
