@@ -11,4 +11,5 @@ class registrasi extends Model
 
     protected $table = 'registrasi';
 
+    protected $fillable = ['id_kategori'];
 }

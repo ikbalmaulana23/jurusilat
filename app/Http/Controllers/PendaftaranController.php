@@ -15,12 +15,12 @@ class PendaftaranController extends Controller
     }
 
     public function showPage(Request $request)
-{
-    $selectedOption = $request->input('option');
+    {
+        $selectedOption = $request->input('option');
 
-    // Tambahkan logika untuk konten yang berbeda berdasarkan $selectedOption
-    return view('pendaftaran.pendaftaran', compact('selectedOption'));
-}
+        // Tambahkan logika untuk konten yang berbeda berdasarkan $selectedOption
+        return view('pendaftaran.pendaftaran', compact('selectedOption'));
+    }
 
     public function input(Request $r)
     {
@@ -35,16 +35,12 @@ class PendaftaranController extends Controller
             'peserta.*.bb' => 'required',
             'peserta.*.kelas' => 'required',
             'peserta.*.asal_sekolah' => 'required',
-            // 'kategori_tanding' => 'required',
+
             'peserta.*.golongan' => 'required',
-            // 'peserta.*.kode_gr' => 'required',
-            // 'peserta.*.kelas_tanding_FK' => 'required',
+
             'peserta.*.kontingen' => 'required',
-            // 'peserta.*.foto' => 'required',
-            // 'ktp' => 'required',
-            // 'peserta.*.akta_lahir' => 'required',
-            // 'peserta.*.ijazah' => 'required',
-        ],[
+
+        ], [
             'peserta.required' => 'Data peserta diperlukan.',
             'peserta.*.nama.required' => 'nama harus diisi',
             'peserta.*.jen_kelamin.required' => 'jenis kelamin harus diisi',
@@ -54,18 +50,17 @@ class PendaftaranController extends Controller
             'peserta.*.bb.required' => 'berat badan harus diiisi',
             'peserta.*.kelas.required' => 'kelas harus diisi',
             'peserta.*.asal_sekolah.required' => 'asal sekolah harus diisi',
-            // 'kategori_tanding.required' => 'kategori tanding harus diisi',
             'peserta.*.golongan.required' => 'golongan harus diisi',
-            // 'peserta.*.kode_gr.required' => 'kode gr harus diisi',
-            // 'peserta.*.kelas_tanding_FK.required' => 'kelas tanding FK harus diisi',
             'peserta.*.kontingen.required' => 'kontingen harus diisi',
-            // 'peserta.*.foto.required' => 'foto harus diisi',
-            // 'peserta.*.ktp.required' => 'ktp harus diisi',
-            // 'peserta.*.akta_lahir.required' => 'akta kelahiran harus diisi',
-            // 'peserta.*.ijazah.required' => 'ijazah harus diisi'
+
         ]);
 
-        $registration = registrasi::create();
+        // $registration = registrasi::create();
+
+        $registration = Registrasi::create([
+            'id_kategori' => $r->input('id_kategori')
+        ]);
+
 
         foreach ($r->peserta as $dataPeserta) {
 

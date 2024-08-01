@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('registrasi', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_kategori')->nullable();
             $table->timestamps();
+            $table->foreign('id_kategori')->references('id')->on('kategori');
         });
     }
 

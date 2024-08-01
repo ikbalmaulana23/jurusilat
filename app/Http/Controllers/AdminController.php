@@ -17,7 +17,9 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.index');
+
+        $data['jumlah'] = Pendaftar::get()->count();
+        return view('admin.index', $data);
     }
 
     public function liveskor($id)
@@ -49,18 +51,34 @@ class AdminController extends Controller
 
     public function nilai()
     {
-
-
         $skor = Skor::with('pendaftar')->get();
-
         return view('admin.nilai', compact('skor'));
     }
 
     public function peserta()
     {
-        $data['peserta'] = Pendaftar::get();
+        $data['peserta'] = Pendaftar::where('id_kategori', 1)->get();
         return view('admin.peserta', $data);
     }
+
+    public function pasangan()
+    {
+        $data['peserta'] = Pendaftar::where('id_kategori', 2)->get();
+        return view('admin.pesertapasangan', $data);
+    }
+
+    public function regu()
+    {
+        $data['peserta'] = Pendaftar::where('id_kategori', 3)->get();
+        return view('admin.pesertaregu', $data);
+    }
+
+    public function ceritera()
+    {
+        $data['peserta'] = Pendaftar::where('id_kategori', 4)->get();
+        return view('admin.pesertaceritera', $data);
+    }
+
 
     public function tambahjuri()
     {

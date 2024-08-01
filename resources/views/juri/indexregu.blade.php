@@ -60,26 +60,24 @@
         <div class="bg-white p-3 mb-5">
             
           <div class="flex gap-2">
-            <a href="/juri" class="px-3 py-1 rounded-t-md bg-yellow-400">Tunggal</a>
-            <a href="/juri/pasangan"  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Pasangan</a>
-            <a href="/juri/regu"  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Regu</a>
+            <a href="/juri" class="px-3 py-1 rounded-t-md hover:bg-blue-300 border">Tunggal</a>
+            <a href="/juri/pasangan"  class="px-3 py-1  hover:bg-blue-300  rounded-t-md border ">Pasangan</a>
+            <a href="/juri/regu"  class="px-3 py-1 rounded-t-md border bg-yellow-400" >Regu</a>
             <a href="/juri/ceritera"  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Ceritera</a>
           </div>
           <div class="container md:mx-auto mb-5 ">
-    
-            
       
             <div class=" m-5 py-5 grid grid-cols-4 gap-3"> 
               {{-- @dd($detail_peserta_tunggal) --}}
-              @foreach ($detail_peserta_tunggal as $tunggal )
+              @foreach ($detail_peserta_regu as $regu )
                 
               <div class=" p-5 border rounded-md shadow-md  ">
-                <p>Nama Peserta : <span class="font-semibold">{{  $tunggal->nama}}</span> </p>
-                <p>Golongan : {{  $tunggal->golongan}} </p>
-                <p class="mb-3">Kontingen : {{  $tunggal->kontingen}} </p>
+                <p>Nama Peserta : <span class="font-semibold">{{  $regu->nama}}</span> </p>
+                <p>Golongan : {{  $regu->golongan}} </p>
+                <p class="mb-3">Kontingen : {{  $regu->kontingen}} </p>
                 
                 <div class="flex justify-center">
-                  <a href="/skorlomba/{{$tunggal->id}}" class=" my-2 px-2 py-1 bg-green-700 text-white rounded-md" >Nilai Peserta ini</a>
+                  <a href="/skorlomba/{{$regu->id}}" class=" my-2 px-2 py-1 bg-green-700 text-white rounded-md" >Nilai Peserta ini</a>
                 </div>
                 
                 

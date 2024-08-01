@@ -71,16 +71,16 @@ class SkorController extends Controller
     //view skor pasangan
     public function skorpasangan()
     {
-        $skors = SkorPasangan::all()->map(function ($skor) {
-            return [
-                'orisinil' => $skor->orisinil,
-                'kekayaan_teknik' => $skor->kekayaan_teknik,
-                'kemantapan_gerak' => $skor->kemantapan_gerak,
-                'penampilan' => $skor->penampilan,
-                'total' => $skor->orisinil + $skor->kekayaan_teknik + $skor->kemantapan_gerak + $skor->penampilan
-            ];
-        });
-        return view('juri.skorpasangan', compact('skors'));
+        // $skors = SkorPasangan::all()->map(function ($skor) {
+        //     return [
+        //         'orisinil' => $skor->orisinil,
+        //         'kekayaan_teknik' => $skor->kekayaan_teknik,
+        //         'kemantapan_gerak' => $skor->kemantapan_gerak,
+        //         'penampilan' => $skor->penampilan,
+        //         'total' => $skor->orisinil + $skor->kekayaan_teknik + $skor->kemantapan_gerak + $skor->penampilan
+        //     ];
+        // });
+        return view('juri.skorpasangan');
     }
     //view form
     public function formpasangan()

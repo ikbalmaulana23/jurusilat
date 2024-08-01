@@ -69,22 +69,16 @@
       
           
       
-            <div class=" m-5 py-2 flex"> 
+            
+      
+            <div class="flex justify-end">
+              <button onclick="window.print('printableArea')"  class="bg-blue-600 px-2 py-1 text-white rounded-md mb-3">Print halaman ini</button>                    
+          </div>
+      
           
-              {{-- @foreach ($detail_peserta_tunggal as $tunggal )
-                
-              <div class=" p-5 ">
-                <p>Name :{{  $tunggal->nama}} </p>
-              </div>
-              @endforeach --}}
-      
-            </div>
-      
-      
-      
-          {{-- @dd($skors) --}}
-      
-            <p class="text-center font-semibold my-3"> Hasil PenilaianTunggal</p>
+            <p class="text-center font-semibold   pb-3"> Hasil PenilaianTunggal</p>
+           
+            
             <table class="w-full">
             <thead>
                 <tr>

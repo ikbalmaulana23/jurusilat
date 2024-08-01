@@ -12,11 +12,44 @@ class JuriController extends Controller
     {
         $data = [
 
-            'detail_peserta_tunggal' => Pendaftar::get()
+            'detail_peserta_tunggal' => Pendaftar::where('id_kategori', 1)->get(),
 
         ];
         return view('juri.index', $data);
     }
+
+
+    public function indexpasangan()
+    {
+        $data = [
+
+            'detail_peserta_pasangan' => Pendaftar::where('id_kategori', 2)->get(),
+
+        ];
+        return view('juri.indexpasangan', $data);
+    }
+
+    public function indexregu()
+    {
+        $data = [
+
+            'detail_peserta_regu' => Pendaftar::where('id_kategori', 3)->get(),
+
+        ];
+
+        return view('juri.indexregu', $data);
+    }
+
+
+    public function indexceritera()
+    {
+        $data = [
+            'detail_peserta_ceritera' => Pendaftar::where('id_kategori', 4)->get(),
+        ];
+
+        return view('juri.indexceritera', $data);
+    }
+
 
     public function rekapnilai()
     {

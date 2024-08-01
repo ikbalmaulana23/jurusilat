@@ -92,9 +92,21 @@
                 <div class="flex-grow p-6 overflow-auto bg-gray-200">
                    
                       <div class="rounded-lg bg-white p-5"> 
+
+
+
                 
                         <p class="text-center text-lg font-semibold">Rekap Peserta Lomba Silat Sumatera Barat</p>
-                 
+
+
+                          
+          <div class="flex gap-2">
+            <a href="/admin/peserta" class="px-3 py-1 rounded-t-md bg-yellow-400 ">Tunggal</a>
+            <a href="/admin/pasangan"  class="px-3 py-1 hover:bg-blue-300  rounded-t-md border ">Pasangan</a>
+            <a href="/admin/regu"  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Regu</a>
+            <a href="/admin/ceritera"  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Ceritera</a>
+          </div>
+
                         <table class="w-full text-sm text-left rtl:text-right">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
@@ -130,6 +142,8 @@
                                     </th>
                                 </tr>
                             </thead>
+
+
                             <tbody class="text-center">
                                 @foreach ($peserta as $row)
                                     <tr>

@@ -25,7 +25,7 @@
             <form class="max-w-4xl mx-auto grid grid-cols-3 gap-5" action="{{ route('daftarpeserta') }}" method="post"
             enctype="multipart/form-data">
                 @csrf
-
+                <input type="hidden" name="id_kategori" value="1">
                 <input type="hidden" name="peserta[0][kategori]" id="" value="1">
                     <div class="mb-5">
                         <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama</label>
@@ -142,25 +142,7 @@
 
                     </div>
 
-                    {{-- <div class="mb-5">
-                        <label for="kode_gr" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kode
-                            GR</label>
-                        <input type="text" name="peserta[0][kode_gr]" id="kode_gr"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                            @error('peserta.0.kode_gr')
-                            <div>{{ $message }}</div>
-                            @enderror
-                    </div> --}}
-
-                    {{-- <div class="mb-5">
-                        <label for="kelas_tanding_FK"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kelas Tanding FK</label>
-                        <input type="text" name="peserta[0][kelas_tanding_FK]" id="kelas_tanding_FK"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                            @error('peserta.0.kelas_tanding_FK')
-                            <div>{{ $message }}</div>
-                            @enderror
-                    </div> --}}
+                   
 
                     <div class="mb-5">
                         <label for="kontingen"

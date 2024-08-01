@@ -26,7 +26,7 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($skors as $index => $skor)
+            {{-- @foreach($skors as $index => $skor)
           <tr>
               <td> {{ $index + 1 }}</td>
               <td>{{ $skor['orisinil'] }}</td>
@@ -35,7 +35,7 @@
               <td>{{ $skor['penampilan'] }}</td>
               <td>{{ $skor['total'] }}</td>
           </tr>
-      @endforeach
+      @endforeach --}}
           </tbody>
         </table>
   

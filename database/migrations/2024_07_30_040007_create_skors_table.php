@@ -20,6 +20,8 @@ return new class extends Migration
             $table->foreign('id_registrasi')->references('id')->on('registrasi');
             $table->unsignedBigInteger('id_juri')->nullable();
             $table->foreign('id_juri')->references('id')->on('users');
+            $table->unsignedBigInteger('id_kategori')->nullable();
+            $table->foreign('id_kategori')->references('id')->on('kategori');
             $table->integer('orisinil');
             $table->integer('kekayaan_teknik');
             $table->integer('kemantapan_gerak');

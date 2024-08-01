@@ -17,7 +17,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.8.10/tailwind.min.css"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css" />
   </head>
 <body>
@@ -65,7 +64,7 @@
             <div class="flex flex-col w-56 border-r border-gray-300">
                 <button class="relative text-sm focus:outline-none group">
                     <div class="flex items-center justify-between w-full h-16 px-4 border-b border-gray-300  bg-red-500">
-                       <p class=" font-semibold text-xl">Admin</p>
+                       <p class="text-white font-semibold text-xl">Admin</p>
                       
                     </div>
                
@@ -92,15 +91,87 @@
                 </div>
                 <div class="flex-grow p-6 overflow-auto bg-gray-200">
                    
-                  
-                   
-                        <div class="rounded-lg bg-white p-5"> 
-                           
-                            <p>   Jumlah Peserta yang daftar dalam Perlombaan Silat Sumatera Barat yaitu :  {{ $jumlah }} orang </p> 
-                              
+                      <div class="rounded-lg bg-white p-5"> 
+
+
+
+                
+                        <p class="text-center text-lg font-semibold">Rekap Peserta Lomba Silat Sumatera Barat</p>
+
+
+                          
+          <div class="flex gap-2">
+            <a href="/admin/peserta" class="px-3 py-1 rounded-t-md hover:bg-blue-300 border">Tunggal</a>
+            <a href="/admin/pasangan"  class="px-3 py-1 hover:bg-blue-300  rounded-t-md border ">Pasangan</a>
+            <a href="/admin/regu"  class="px-3 py-1 rounded-t-md border  bg-yellow-400 ">Regu</a>
+            <a href="/admin/ceritera"  class="px-3 py-1 rounded-t-md border hover:bg-blue-300">Ceritera</a>
+          </div>
+
+                        <table class="w-full text-sm text-left rtl:text-right">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">
+                                        Nama
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Jenis Kelamin
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Tempat Lahir
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Tanggal Lahir
+                                    </th>
                             
-                      </div>
-              
+                                    <th scope="col" class="px-6 py-3">
+                                        Kelas
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Asal Sekolah
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Kategori Tanding
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Golongan
+                                    </th>
+                                
+                                
+                                    <th scope="col" class="px-6 py-3">
+                                        Aksi
+                                    </th>
+                                </tr>
+                            </thead>
+
+
+                            <tbody class="text-center">
+                                @foreach ($peserta as $row)
+                                    <tr>
+                                        <td class="text-center">{{ $row->nama }}</td>
+                                        <td class="text-center">{{ $row->jen_kelamin }}</td>
+                                        <td class="text-center">{{ $row->tpt_lahir }}</td>
+                                        <td class="text-center">{{ $row->tgl_lahir }}</td>
+                                     
+                                        <td class="text-center">{{ $row->kelas }}</td>
+                                        <td class="text-center">{{ $row->asal_sekolah }}</td>
+                                        <td class="text-center">{{ $row->kategori_tanding }}</td>
+                                        <td class="text-center">{{ $row->golongan }}</td>
+                                      
+                                 
+                                        <td class="flex flex-col">
+                                            <a href="/tampiledit/{{ $row->id }}"
+                                                class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Edit</a>
+                                            <form action="{{ route('delete', $row->id) }}" method="post">
+                                                @csrf
+                                                <button
+                                                    class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"">Hapus</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
             </div>
             <!-- Component End  -->
 

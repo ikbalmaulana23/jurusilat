@@ -95,7 +95,7 @@
                    
 
                     <div class="bg-white p-3 mb-5">
-                        <div class=" m-5 py-10 grid grid-cols-4">   
+                        <div class=" m-5 py-10 grid grid-cols-4 gap-3">   
                     @foreach ($detail_peserta_tunggal as $tunggal )
                 
                     <div class=" bg-gradient-to-r from-red-200 to-yellow-300      p-5 border rounded-md shadow-md  ">
@@ -106,9 +106,7 @@
                       <div class="flex justify-center">
                         <a href="/admin/liveskor/{{$tunggal->id}}" class=" my-2 px-2 py-1 bg-green-700  transform hover:scale-110 text-white rounded-md" >Nilai Peserta ini</a>
                       </div>
-                      
-                      
-      
+
                     </div>
                     @endforeach
                 </div>  
