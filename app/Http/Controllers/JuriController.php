@@ -54,10 +54,40 @@ class JuriController extends Controller
     public function rekapnilai()
     {
         $data = [
-            'skor' => Skor::all(),
+            'skor' => Skor::where('id_kategori', 1)->get(),
 
 
         ];
         return view('juri.rekapnilai', $data);
+    }
+
+    public function rekapnilaipasangan()
+    {
+        $data = [
+            'skor' => Skor::where('id_kategori', 2)->get(),
+
+
+        ];
+        return view('juri.rekapnilaipasangan', $data);
+    }
+
+    public function rekapnilairegu()
+    {
+        $data = [
+            'skor' => Skor::where('id_kategori', 3)->get(),
+
+
+        ];
+        return view('juri.rekapnilairegu', $data);
+    }
+
+    public function rekapnilaiceritera()
+    {
+        $data = [
+            'skor' => Skor::where('id_kategori', 4)->get(),
+
+
+        ];
+        return view('juri.rekapnilaiceritera', $data);
     }
 }

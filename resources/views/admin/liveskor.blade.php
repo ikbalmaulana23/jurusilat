@@ -29,41 +29,76 @@
                     <p>Kode pertandingan : {{ $peserta->id }}</p>
                 </div>
                 <div class="basis-2/4 flex flex-col justify-center  ">
-                    <div class="flex justify-center" id="l_timer">
-                        <h1 class="text-9xl mt-32" id="countdown">00.00</h1>
-                     
-                        
+                    <div class="flex justify-center mt-20">
+                        <label class="px-2 mx-2 py-1 rounded-md">
+                            <input type="radio" name="timeOption" value="180"> 3 Menit
+                        </label>
+                        <label class="px-2 mx-2 py-1 rounded-md">
+                            <input type="radio" name="timeOption" value="300"> 5 Menit
+                        </label>
+                        <label class="px-2 mx-2 py-1 rounded-md">
+                            <input type="radio" name="timeOption" value="600"> 10 Menit
+                        </label>
                     </div>
-                    <div class="flex justify-end">
+
+
+                    <div class="flex justify-center" id="l_timer">
+                        <h1 class="text-9xl mt-5" id="countdown">00:00</h1>
+                    </div>
+                    <div class="flex justify-end my-4">
                         <button id="startButton" class="px-2 mx-2 py-1 rounded-md bg-blue-300">Start</button>
                         <button id="pauseButton" disabled class="px-2 mx-2 py-1 rounded-md bg-red-300">Pause</button>
                     </div>
                 </div>
+                <div class="basis-1/4  p-4 pb-32 pr-32">
+                    <div class="border p-3 rounded-md shadow-md bg-white ">
+                        <p>Rata Rata</p>
+                        <p class="text-5xl font-bold p-4">
+                        
+                            {{ $rata_rata ?? 'Rata-Rata' }}
+                            </p>
+                       
 
-                
-                
+                    </div>
+                </div>
             </div>
+           
+                
+                
+           
 
             <div class="flex m-10 pt-10 justify-around">
                 <div class="border rounded-md bg-blue-300 p-3 text-center space-y-3">
                     <h1 class="">Juri 1 </h1>
-                    <p class="text-5xl font-bold ">
+                    <p class="text-5xl font-bold p-4">
                         
-                        {{ $juri1[0]['total'] ?? 'Skor' }}
+                        {{ $juri1['total'] ?? 'Skor' }}
                         </p>
-                    <p>Datuak Bagindo Ali</p>
+                   
                 </div>
 
                 <div class="border rounded-md bg-blue-300 p-3 text-center space-y-3">
                     <h1 class="">Juri 2 </h1>
-                    <p class="text-5xl font-bold ">{{ $juri2[0]['total'] ?? 'Skor' }}</p>
-                    <p>Datuak Bagindo Ali</p>
+                    <p class="text-5xl font-bold p-4">{{ $juri2['total'] ?? 'Skor' }}</p>
+                    
                 </div>
 
                 <div class="border rounded-md bg-blue-300 p-3 text-center space-y-3">
                     <h1 class="">Juri 3 </h1>
-                    <p class="text-5xl font-bold ">{{ $juri3[0]['total'] ?? 'Skor' }}</p>
-                    <p>Datuak Bagindo Ali</p>
+                    <p class="text-5xl font-bold p-4">{{ $juri3['total'] ?? 'Skor' }}</p>
+                   
+                </div>
+
+                <div class="border rounded-md bg-blue-300 p-3 text-center space-y-3">
+                    <h1 class="">Juri 4 </h1>
+                    <p class="text-5xl font-bold p-4">{{ $juri4['total'] ?? 'Skor' }}</p>
+                    
+                </div>
+
+                <div class="border rounded-md bg-blue-300 p-3 text-center space-y-3">
+                    <h1 class="">Juri 5 </h1>
+                    <p class="text-5xl font-bold p-4">{{ $juri5['total'] ?? 'Skor' }}</p>
+                    
                 </div>
             </div>
         </div>
@@ -72,68 +107,62 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Set the countdown time (10 minutes = 600 seconds)
-            var countdownTime = 1 * 60;
+            var countdownTime;
             var countdownElement = document.getElementById('countdown');
             var pauseButton = document.getElementById('pauseButton');
             var startButton = document.getElementById('startButton');
+            var timeOptions = document.getElementsByName('timeOption');
             var isPaused = false;
             var isStarted = false;
             var countdownInterval;
-
+        
             function updateCountdownDisplay() {
                 var minutes = Math.floor(countdownTime / 60);
                 var seconds = countdownTime % 60;
-                countdownElement.innerHTML = minutes + "m " + seconds + "s ";
+                countdownElement.innerHTML = minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0');
             }
-
+        
             function startCountdown() {
                 countdownInterval = setInterval(function() {
                     if (!isPaused) {
-                        // Calculate minutes and seconds
-                        var minutes = Math.floor(countdownTime / 60);
-                        var seconds = countdownTime % 60;
-
-                        // Display the result in the element with id="countdown"
-                        countdownElement.innerHTML = minutes + "m " + seconds + "s ";
-
-                        // If the countdown is over, clear the interval
                         if (countdownTime <= 0) {
                             clearInterval(countdownInterval);
                             countdownElement.innerHTML = "SELESAI";
                             location.reload();
-
                         } else {
                             countdownTime--;
+                            updateCountdownDisplay();
                         }
                     }
                 }, 1000);
             }
-
+        
             pauseButton.addEventListener('click', function() {
                 if (isStarted) {
-                    if (isPaused) {
-                        isPaused = false;
-                        pauseButton.innerHTML = "Pause";
-                    } else {
-                        isPaused = true;
-                        pauseButton.innerHTML = "Resume";
+                    isPaused = !isPaused;
+                    pauseButton.innerHTML = isPaused ? "Resume" : "Pause";
+                }
+            });
+        
+            startButton.addEventListener('click', function() {
+                if (!isStarted) {
+                    for (var option of timeOptions) {
+                        if (option.checked) {
+                            countdownTime = parseInt(option.value);
+                            break;
+                        }
+                    }
+                    if (countdownTime > 0) {
+                        isStarted = true;
+                        startButton.disabled = true;
+                        pauseButton.disabled = false;
+                        updateCountdownDisplay();
+                        startCountdown();
                     }
                 }
             });
-
-            startButton.addEventListener('click', function() {
-                if (!isStarted) {
-                    isStarted = true;
-                    startButton.disabled = true;
-                    pauseButton.disabled = false;
-                    startCountdown();
-                }
-            });
-
-            // Initialize display
-            updateCountdownDisplay();
         });
-    </script>
+        </script>
+        
 </body>
 </html>
