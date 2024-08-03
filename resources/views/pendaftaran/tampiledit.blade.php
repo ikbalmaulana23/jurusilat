@@ -85,14 +85,7 @@
                 <span>{{ $errors->first('asal_sekolah') }}</span>
             </div>
 
-            <div class="mb-5">
-                <label for="kategori_tanding"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori Tanding</label>
-                <input type="text" name="kategori_tanding" id="kategori_tanding"
-                    value="{{ $data->kategori_tanding }}"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                <span>{{ $errors->first('kategori_tanding') }}</span>
-            </div>
+           
 
 
             <div class="mb-5">
@@ -103,21 +96,9 @@
                 <span>{{ $errors->first('golongan') }}</span>
             </div>
 
-            <div class="mb-5">
-                <label for="kode_gr" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kode
-                    GR</label>
-                <input type="text" name="kode_gr" id="kode_gr" value="{{ $data->kode_gr }}"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                <span>{{ $errors->first('kode_gr') }}</span>
-            </div>
+            
 
-            <div class="mb-5">
-                <label for="kelas_tanding_FK"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kelas Tanding FK</label>
-                <input type="text" name="kelas_tanding_FK" id="kode_gr" value="{{ $data->kelas_tanding_FK }}"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                <span>{{ $errors->first('kelas_tanding_FK') }}</span>
-            </div>
+            
 
             <div class="mb-5">
                 <label for="kontingen"

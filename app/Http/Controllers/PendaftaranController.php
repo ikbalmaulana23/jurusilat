@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Skor;
 use App\Models\Pendaftar;
+use App\Models\registrasi;
 use Illuminate\Http\Request;
 use App\Http\Requests\inputrequest;
-use App\Models\registrasi;
 
 class PendaftaranController extends Controller
 {
@@ -129,14 +130,19 @@ class PendaftaranController extends Controller
         $data = Pendaftar::find($id);
         $data->update($request->all());
 
-        return redirect('/')->with('pesan', 'Data berhasil diedit');
+        return redirect('/admin/peserta')->with('pesan', 'Data berhasil diedit');
     }
 
     public function delete($id)
     {
-        $data = Pendaftar::find($id);
-        $data->delete();
+        $pendaftarId = $id; // ID dari pendaftar yang ingin dihapus
 
-        return redirect('/')->with('pesan', 'Data berhasil dihapus');
+        // Hapus data terkait di tabel `skor`
+        Skor::where('peserta_id', $pendaftarId)->delete();
+
+        // Hapus data dari tabel `pendaftar`
+        Pendaftar::destroy($pendaftarId);
+
+        return redirect('/admin/peserta')->with('pesan', 'Data berhasil dihapus');
     }
 }

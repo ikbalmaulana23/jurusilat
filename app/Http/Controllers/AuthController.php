@@ -18,7 +18,12 @@ class AuthController extends Controller
                 'name' => $r->name,
                 'password' => $r->password
             ])) {
-                return redirect('')->with('pesan', 'berhasil login');
+                // Memeriksa apakah name adalah 'admin'
+                if ($r->name === 'admin') {
+                    return redirect('/admin')->with('pesan', 'berhasil login');
+                } else {
+                    return redirect('/juri')->with('pesan', 'berhasil login');
+                }
             } else {
                 return back()->with('pesan', 'login gagal');
             }
@@ -44,6 +49,6 @@ class AuthController extends Controller
     {
         auth()->logout();
 
-        return redirect('/');
+        return redirect('/login');
     }
 }

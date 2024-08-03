@@ -131,9 +131,7 @@
                                 <th scope="col" class="px-6 py-3">
                                     Asal Sekolah
                                 </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Kategori Tanding
-                                </th>
+                              
                                 <th scope="col" class="px-6 py-3">
                                     Golongan
                                 </th>
@@ -156,7 +154,7 @@
 
                                 <td class="text-center">{{ $row->kelas }}</td>
                                 <td class="text-center">{{ $row->asal_sekolah }}</td>
-                                <td class="text-center">{{ $row->kategori_tanding }}</td>
+                               
                                 <td class="text-center">{{ $row->golongan }}</td>
 
 
